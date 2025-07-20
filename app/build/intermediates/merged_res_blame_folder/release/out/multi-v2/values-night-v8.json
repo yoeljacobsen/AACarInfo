@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.aacarinfo.app-mergeReleaseResources-40:/values-night-v8/values-night-v8.xml",
+            "map": [
+                {
+                    "source": "/home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/res/values-night-v8/values-night-v8.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,104,154,202",
+                        "endColumns": "48,49,47,50",
+                        "endOffsets": "99,149,197,248"
+                    }
+                }
+            ]
+        }
+    ]
+}

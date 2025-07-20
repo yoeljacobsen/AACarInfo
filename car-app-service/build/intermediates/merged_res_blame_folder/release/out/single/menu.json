@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.example.aacarinfo.car.app.service.car-app-service-merged_res-10:/menu/example_menu.xml",
+        "source": "com.example.aacarinfo.car.app.service.car-app-service-core-1.7.0-0:/menu/example_menu.xml"
+    },
+    {
+        "merged": "com.example.aacarinfo.car.app.service.car-app-service-merged_res-10:/menu/example_menu2.xml",
+        "source": "com.example.aacarinfo.car.app.service.car-app-service-core-1.7.0-0:/menu/example_menu2.xml"
+    }
+]

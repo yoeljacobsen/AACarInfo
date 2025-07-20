@@ -1,0 +1,5 @@
+
+<full-backup-content>
+    <include domain="file" path="."/>
+    <exclude domain="file" path="./no_backup/"/>
+</full-backup-content>

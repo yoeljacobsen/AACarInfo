@@ -1,0 +1,381 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:2:1-30:12
+MERGED from [:car-app-service] /home/yoel/Development/Android/AACarInfo/car-app-service/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:vehicle-data-layer] /home/yoel/Development/Android/AACarInfo/vehicle-data-layer/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:common-data] /home/yoel/Development/Android/AACarInfo/common-data/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material3:material3:1.0.0] /home/yoel/.gradle/caches/8.14.2/transforms/a70e9a678048795bf78a823e11e3a99e/transformed/material3-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.material:material-ripple:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/03a57ff6201eb6dd30d08d287baa5f2d/transformed/material-ripple-1.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.material:material-icons-core:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/a83fecddad7278cab12ece8befac2322/transformed/material-icons-core-1.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.material:material:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/6743f6be0cac665d4e626c3ea260cb96/transformed/material-1.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.animation:animation-core:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/c962fc678a6d63f7530d74f73bf6cde0/transformed/animation-core-1.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.animation:animation:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/e8232e4de8df81627e6ae04fab2409a0/transformed/animation-1.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.foundation:foundation-layout:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/f48be9e4cfdae35d51948aaccbc6a02f/transformed/foundation-layout-1.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.foundation:foundation:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/0109c48c36cdc0815681623716a38057/transformed/foundation-1.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-tooling-data:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/388151ab4988e513efab605b94efacc6/transformed/ui-tooling-data-1.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-unit:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/d96c94ebb5acd521183afe77fb865a52/transformed/ui-unit-1.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-geometry:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/35f7d2efe04e901e444c9314aaac0917/transformed/ui-geometry-1.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-util:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/ee7d1e21d12badece3d56629be2edd03/transformed/ui-util-1.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-text:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/e5b44db7b34406e96411f0afd7bfda99/transformed/ui-text-1.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-tooling-preview:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/1792430e4c7dee8542b9561d871ed2de/transformed/ui-tooling-preview-1.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-test-manifest:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/d91e37e6c645c4e600d5a68da279da41/transformed/ui-test-manifest-1.4.0/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.compose.ui:ui-graphics:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/3de2e95a691ccc8d4124ce8b0d3aab44/transformed/ui-graphics-1.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-tooling:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/960415cfbd525d7014374b5a186fffdf/transformed/ui-tooling-1.4.0/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:17:1-41:12
+MERGED from [androidx.activity:activity:1.7.0] /home/yoel/.gradle/caches/8.14.2/transforms/cd91d460bd8522da7aa49994ac1ba3b2/transformed/activity-1.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-ktx:1.7.0] /home/yoel/.gradle/caches/8.14.2/transforms/fb30a0e999f8c36b0fe1373d84f24e4d/transformed/activity-ktx-1.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-compose:1.7.0] /home/yoel/.gradle/caches/8.14.2/transforms/d221800785023bfd353c63ad2fc3f761/transformed/activity-compose-1.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/5de0595b77de02f2f13e4090982aed97/transformed/ui-1.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/yoel/.gradle/caches/8.14.2/transforms/79368648f313da1329ed92fb3e7db81f/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/19d0ad7a57480e10264e3698bcdd38d0/transformed/lifecycle-livedata-core-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/0249a807199915eafdb5dceec6c5e3af/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/6a5c418ff87c7ab511a298e31afc1bd6/transformed/lifecycle-viewmodel-ktx-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/yoel/.gradle/caches/8.14.2/transforms/cc0ce36a0235c9ea759705cf3373d905/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/yoel/.gradle/caches/8.14.2/transforms/f6fbf09f292975a886f218566b4bcbde/transformed/savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/d56ef7dca9af345fc45e4ddb8540fb1f/transformed/lifecycle-viewmodel-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/0f74535c3f081b7f29dfeddf3d11e0a4/transformed/lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/3968c7f91ebb2055b7664bcb6f354242/transformed/core-ktx-1.9.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.autofill:autofill:1.0.0] /home/yoel/.gradle/caches/8.14.2/transforms/35926b3ba10cff54c4ceade090d409f5/transformed/autofill-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/3240db572b03f7c8fc3857099db26ec3/transformed/lifecycle-runtime-2.6.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/4936cf5f8d2d8db6f3b1651e13307512/transformed/lifecycle-runtime-ktx-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.runtime:runtime-saveable:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/8cd6d439db87ef306b14cc595db82880/transformed/runtime-saveable-1.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.runtime:runtime:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/75b6a8fe86bf3606dff88e3d034c13c0/transformed/runtime-1.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/yoel/.gradle/caches/8.14.2/transforms/90a4284898a705b248c352d9ed6872b9/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/yoel/.gradle/caches/8.14.2/transforms/3b169d0d0a7444311d6930ca3ed283b2/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/yoel/.gradle/caches/8.14.2/transforms/b4e0c9a444b77ef9ee5580dc6f59490d/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /home/yoel/.gradle/caches/8.14.2/transforms/bbec39aaf733fda84372cdd43a3d3552/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/04650de93fafa6f81f5d899ce9f60ea4/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
+	package
+		INJECTED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:5:5-28:19
+INJECTED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:5:5-28:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/d91e37e6c645c4e600d5a68da279da41/transformed/ui-test-manifest-1.4.0/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/d91e37e6c645c4e600d5a68da279da41/transformed/ui-test-manifest-1.4.0/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/960415cfbd525d7014374b5a186fffdf/transformed/ui-tooling-1.4.0/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/960415cfbd525d7014374b5a186fffdf/transformed/ui-tooling-1.4.0/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:23:5-35:19
+MERGED from [androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:23:5-35:19
+MERGED from [androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:30:5-39:19
+MERGED from [androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:30:5-39:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/0249a807199915eafdb5dceec6c5e3af/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/0249a807199915eafdb5dceec6c5e3af/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/yoel/.gradle/caches/8.14.2/transforms/90a4284898a705b248c352d9ed6872b9/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/yoel/.gradle/caches/8.14.2/transforms/90a4284898a705b248c352d9ed6872b9/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/yoel/.gradle/caches/8.14.2/transforms/b4e0c9a444b77ef9ee5580dc6f59490d/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/yoel/.gradle/caches/8.14.2/transforms/b4e0c9a444b77ef9ee5580dc6f59490d/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+	android:extractNativeLibs
+		INJECTED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:12:9-35
+	android:label
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:10:9-41
+	android:fullBackupContent
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:8:9-54
+	android:roundIcon
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:11:9-54
+	tools:targetApi
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:14:9-29
+	android:icon
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:9:9-43
+	android:allowBackup
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:13:9-47
+	android:dataExtractionRules
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:7:9-65
+service#com.example.aacarinfo.car.app.service.AacarinfoCarAppService
+ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:16:9-26:19
+	android:exported
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:18:13-36
+	android:name
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:17:13-88
+intent-filter#action:name:androidx.car.app.CarAppService+category:name:androidx.car.app.category.IOT
+ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:19:13-22:29
+action#androidx.car.app.CarAppService
+ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:20:17-73
+	android:name
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:20:25-70
+category#androidx.car.app.category.IOT
+ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:21:17-74
+	android:name
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:21:27-71
+meta-data#androidx.car.app.minApiVersion
+ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:23:13-25:37
+	android:value
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:25:17-34
+	android:name
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:24:17-62
+uses-sdk
+INJECTED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml
+INJECTED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml
+MERGED from [:car-app-service] /home/yoel/Development/Android/AACarInfo/car-app-service/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:car-app-service] /home/yoel/Development/Android/AACarInfo/car-app-service/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:vehicle-data-layer] /home/yoel/Development/Android/AACarInfo/vehicle-data-layer/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:vehicle-data-layer] /home/yoel/Development/Android/AACarInfo/vehicle-data-layer/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:common-data] /home/yoel/Development/Android/AACarInfo/common-data/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:common-data] /home/yoel/Development/Android/AACarInfo/common-data/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material3:material3:1.0.0] /home/yoel/.gradle/caches/8.14.2/transforms/a70e9a678048795bf78a823e11e3a99e/transformed/material3-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material3:material3:1.0.0] /home/yoel/.gradle/caches/8.14.2/transforms/a70e9a678048795bf78a823e11e3a99e/transformed/material3-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material:material-ripple:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/03a57ff6201eb6dd30d08d287baa5f2d/transformed/material-ripple-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material:material-ripple:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/03a57ff6201eb6dd30d08d287baa5f2d/transformed/material-ripple-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material:material-icons-core:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/a83fecddad7278cab12ece8befac2322/transformed/material-icons-core-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material:material-icons-core:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/a83fecddad7278cab12ece8befac2322/transformed/material-icons-core-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material:material:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/6743f6be0cac665d4e626c3ea260cb96/transformed/material-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material:material:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/6743f6be0cac665d4e626c3ea260cb96/transformed/material-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.animation:animation-core:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/c962fc678a6d63f7530d74f73bf6cde0/transformed/animation-core-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.animation:animation-core:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/c962fc678a6d63f7530d74f73bf6cde0/transformed/animation-core-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.animation:animation:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/e8232e4de8df81627e6ae04fab2409a0/transformed/animation-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.animation:animation:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/e8232e4de8df81627e6ae04fab2409a0/transformed/animation-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.foundation:foundation-layout:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/f48be9e4cfdae35d51948aaccbc6a02f/transformed/foundation-layout-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.foundation:foundation-layout:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/f48be9e4cfdae35d51948aaccbc6a02f/transformed/foundation-layout-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.foundation:foundation:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/0109c48c36cdc0815681623716a38057/transformed/foundation-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.foundation:foundation:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/0109c48c36cdc0815681623716a38057/transformed/foundation-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/388151ab4988e513efab605b94efacc6/transformed/ui-tooling-data-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/388151ab4988e513efab605b94efacc6/transformed/ui-tooling-data-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-unit:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/d96c94ebb5acd521183afe77fb865a52/transformed/ui-unit-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-unit:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/d96c94ebb5acd521183afe77fb865a52/transformed/ui-unit-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-geometry:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/35f7d2efe04e901e444c9314aaac0917/transformed/ui-geometry-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-geometry:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/35f7d2efe04e901e444c9314aaac0917/transformed/ui-geometry-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-util:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/ee7d1e21d12badece3d56629be2edd03/transformed/ui-util-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-util:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/ee7d1e21d12badece3d56629be2edd03/transformed/ui-util-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-text:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/e5b44db7b34406e96411f0afd7bfda99/transformed/ui-text-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-text:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/e5b44db7b34406e96411f0afd7bfda99/transformed/ui-text-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/1792430e4c7dee8542b9561d871ed2de/transformed/ui-tooling-preview-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/1792430e4c7dee8542b9561d871ed2de/transformed/ui-tooling-preview-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/d91e37e6c645c4e600d5a68da279da41/transformed/ui-test-manifest-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/d91e37e6c645c4e600d5a68da279da41/transformed/ui-test-manifest-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-graphics:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/3de2e95a691ccc8d4124ce8b0d3aab44/transformed/ui-graphics-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-graphics:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/3de2e95a691ccc8d4124ce8b0d3aab44/transformed/ui-graphics-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/960415cfbd525d7014374b5a186fffdf/transformed/ui-tooling-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/960415cfbd525d7014374b5a186fffdf/transformed/ui-tooling-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:21:5-44
+MERGED from [androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:21:5-44
+MERGED from [androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:21:5-44
+MERGED from [androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:21:5-44
+MERGED from [androidx.activity:activity:1.7.0] /home/yoel/.gradle/caches/8.14.2/transforms/cd91d460bd8522da7aa49994ac1ba3b2/transformed/activity-1.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.7.0] /home/yoel/.gradle/caches/8.14.2/transforms/cd91d460bd8522da7aa49994ac1ba3b2/transformed/activity-1.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-ktx:1.7.0] /home/yoel/.gradle/caches/8.14.2/transforms/fb30a0e999f8c36b0fe1373d84f24e4d/transformed/activity-ktx-1.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-ktx:1.7.0] /home/yoel/.gradle/caches/8.14.2/transforms/fb30a0e999f8c36b0fe1373d84f24e4d/transformed/activity-ktx-1.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-compose:1.7.0] /home/yoel/.gradle/caches/8.14.2/transforms/d221800785023bfd353c63ad2fc3f761/transformed/activity-compose-1.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-compose:1.7.0] /home/yoel/.gradle/caches/8.14.2/transforms/d221800785023bfd353c63ad2fc3f761/transformed/activity-compose-1.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/5de0595b77de02f2f13e4090982aed97/transformed/ui-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/5de0595b77de02f2f13e4090982aed97/transformed/ui-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/yoel/.gradle/caches/8.14.2/transforms/79368648f313da1329ed92fb3e7db81f/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/yoel/.gradle/caches/8.14.2/transforms/79368648f313da1329ed92fb3e7db81f/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/19d0ad7a57480e10264e3698bcdd38d0/transformed/lifecycle-livedata-core-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/19d0ad7a57480e10264e3698bcdd38d0/transformed/lifecycle-livedata-core-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/0249a807199915eafdb5dceec6c5e3af/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/0249a807199915eafdb5dceec6c5e3af/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/6a5c418ff87c7ab511a298e31afc1bd6/transformed/lifecycle-viewmodel-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/6a5c418ff87c7ab511a298e31afc1bd6/transformed/lifecycle-viewmodel-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/yoel/.gradle/caches/8.14.2/transforms/cc0ce36a0235c9ea759705cf3373d905/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/yoel/.gradle/caches/8.14.2/transforms/cc0ce36a0235c9ea759705cf3373d905/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/yoel/.gradle/caches/8.14.2/transforms/f6fbf09f292975a886f218566b4bcbde/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/yoel/.gradle/caches/8.14.2/transforms/f6fbf09f292975a886f218566b4bcbde/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/d56ef7dca9af345fc45e4ddb8540fb1f/transformed/lifecycle-viewmodel-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/d56ef7dca9af345fc45e4ddb8540fb1f/transformed/lifecycle-viewmodel-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/0f74535c3f081b7f29dfeddf3d11e0a4/transformed/lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/0f74535c3f081b7f29dfeddf3d11e0a4/transformed/lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/3968c7f91ebb2055b7664bcb6f354242/transformed/core-ktx-1.9.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/3968c7f91ebb2055b7664bcb6f354242/transformed/core-ktx-1.9.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.autofill:autofill:1.0.0] /home/yoel/.gradle/caches/8.14.2/transforms/35926b3ba10cff54c4ceade090d409f5/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] /home/yoel/.gradle/caches/8.14.2/transforms/35926b3ba10cff54c4ceade090d409f5/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/3240db572b03f7c8fc3857099db26ec3/transformed/lifecycle-runtime-2.6.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/3240db572b03f7c8fc3857099db26ec3/transformed/lifecycle-runtime-2.6.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/4936cf5f8d2d8db6f3b1651e13307512/transformed/lifecycle-runtime-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/4936cf5f8d2d8db6f3b1651e13307512/transformed/lifecycle-runtime-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/8cd6d439db87ef306b14cc595db82880/transformed/runtime-saveable-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/8cd6d439db87ef306b14cc595db82880/transformed/runtime-saveable-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.runtime:runtime:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/75b6a8fe86bf3606dff88e3d034c13c0/transformed/runtime-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.runtime:runtime:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/75b6a8fe86bf3606dff88e3d034c13c0/transformed/runtime-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/yoel/.gradle/caches/8.14.2/transforms/90a4284898a705b248c352d9ed6872b9/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/yoel/.gradle/caches/8.14.2/transforms/90a4284898a705b248c352d9ed6872b9/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/yoel/.gradle/caches/8.14.2/transforms/3b169d0d0a7444311d6930ca3ed283b2/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/yoel/.gradle/caches/8.14.2/transforms/3b169d0d0a7444311d6930ca3ed283b2/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/yoel/.gradle/caches/8.14.2/transforms/b4e0c9a444b77ef9ee5580dc6f59490d/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/yoel/.gradle/caches/8.14.2/transforms/b4e0c9a444b77ef9ee5580dc6f59490d/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/yoel/.gradle/caches/8.14.2/transforms/bbec39aaf733fda84372cdd43a3d3552/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/yoel/.gradle/caches/8.14.2/transforms/bbec39aaf733fda84372cdd43a3d3552/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/04650de93fafa6f81f5d899ce9f60ea4/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/04650de93fafa6f81f5d899ce9f60ea4/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
+	android:targetSdkVersion
+		INJECTED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml
+activity#androidx.activity.ComponentActivity
+ADDED from [androidx.compose.ui:ui-test-manifest:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/d91e37e6c645c4e600d5a68da279da41/transformed/ui-test-manifest-1.4.0/AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/d91e37e6c645c4e600d5a68da279da41/transformed/ui-test-manifest-1.4.0/AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/d91e37e6c645c4e600d5a68da279da41/transformed/ui-test-manifest-1.4.0/AndroidManifest.xml:24:13-63
+activity#androidx.compose.ui.tooling.PreviewActivity
+ADDED from [androidx.compose.ui:ui-tooling:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/960415cfbd525d7014374b5a186fffdf/transformed/ui-tooling-1.4.0/AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-tooling:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/960415cfbd525d7014374b5a186fffdf/transformed/ui-tooling-1.4.0/AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-tooling:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/960415cfbd525d7014374b5a186fffdf/transformed/ui-tooling-1.4.0/AndroidManifest.xml:24:13-71
+service#androidx.car.app.CarAppMetadataHolderService
+ADDED from [androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:24:9-34:19
+	tools:node
+		ADDED from [androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:30:13-31
+	android:process
+		ADDED from [androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:28:13-31
+	android:enabled
+		ADDED from [androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:26:13-36
+	android:exported
+		ADDED from [androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:27:13-37
+	tools:ignore
+		ADDED from [androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:29:13-75
+	android:name
+		ADDED from [androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:25:13-72
+meta-data#androidx.car.app.CarAppMetadataHolderService.CAR_HARDWARE_MANAGER
+ADDED from [androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:31:13-33:89
+	android:value
+		ADDED from [androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:33:17-86
+	android:name
+		ADDED from [androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:32:17-97
+queries
+ADDED from [androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:23:5-28:15
+provider#androidx.car.app.connection.provider
+ADDED from [androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:24:9-27:43
+	android:authorities
+		ADDED from [androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:26:13-62
+	tools:ignore
+		ADDED from [androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:27:13-40
+	android:name
+		ADDED from [androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:25:13-64
+activity#androidx.car.app.CarAppPermissionActivity
+ADDED from [androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:31:9-34:75
+	android:exported
+		ADDED from [androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:33:13-37
+	android:theme
+		ADDED from [androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:34:13-72
+	android:name
+		ADDED from [androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:32:13-69
+receiver#androidx.car.app.notification.CarAppNotificationBroadcastReceiver
+ADDED from [androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:36:9-38:40
+	android:exported
+		ADDED from [androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:38:13-37
+	android:name
+		ADDED from [androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:37:13-93
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/0249a807199915eafdb5dceec6c5e3af/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/0249a807199915eafdb5dceec6c5e3af/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/yoel/.gradle/caches/8.14.2/transforms/b4e0c9a444b77ef9ee5580dc6f59490d/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/yoel/.gradle/caches/8.14.2/transforms/b4e0c9a444b77ef9ee5580dc6f59490d/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/0249a807199915eafdb5dceec6c5e3af/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/0249a807199915eafdb5dceec6c5e3af/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/0249a807199915eafdb5dceec6c5e3af/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+permission#com.example.aacarinfo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+uses-permission#com.example.aacarinfo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92

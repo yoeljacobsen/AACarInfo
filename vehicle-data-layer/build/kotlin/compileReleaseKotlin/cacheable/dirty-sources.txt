@@ -1,0 +1,2 @@
+/home/yoel/Development/Android/AACarInfo/vehicle-data-layer/src/main/kotlin/com/example/aacarinfo/vehicle/data/layer/VehicleDataManager.kt
+/home/yoel/Development/Android/AACarInfo/vehicle-data-layer/src/main/kotlin/com/example/aacarinfo/vehicle/data/layer/VehicleProfiler.kt
