@@ -41,7 +41,11 @@ class VehicleProfiler(
         val evConnectorTypes = energyProfile.evConnectorTypes.value ?: emptyList()
 
         val hasElectricFuel = fuelTypes.any { it == EnergyProfile.FUEL_TYPE_ELECTRIC }
-        val hasGasolineFuel = fuelTypes.any { it == EnergyProfile.FUEL_TYPE_UNLEADED || it == EnergyProfile.FUEL_TYPE_DIESEL }
+        val hasGasolineFuel = fuelTypes.any {
+            it == EnergyProfile.FUEL_TYPE_UNLEADED ||
+            it == EnergyProfile.FUEL_TYPE_DIESEL_1 ||
+            it == EnergyProfile.FUEL_TYPE_DIESEL_2
+        }
         val hasEvConnectors = evConnectorTypes.isNotEmpty()
 
         return when {

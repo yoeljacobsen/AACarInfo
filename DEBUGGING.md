@@ -1,69 +1,44 @@
-# DEBUGGING.md
-
-This document logs all encountered bugs, unexpected behavior, error messages, and the steps taken to troubleshoot them.
-
-## Log Entries
-
----
-
-### [Date: 2025-07-20]
-
-**Issue:** Initial Gradle sync issues after setting up multi-module project.
-
-**Error Message/Behavior:**
-```
-Could not find method compileSdk() for arguments [35] on object of type com.android.build.gradle.LibraryExtension.
-```
-
-**Troubleshooting Steps:**
-1.  Verified `compileSdk` usage in `build.gradle.kts` files.
-2.  Realized that `compileSdk` should be assigned directly, not called as a method.
-3.  Corrected `compileSdk = project.ext.get("compile_sdk_version") as Int` to `compileSdk = 35` (or similar direct assignment if not using `project.ext`).
-    *Self-correction: The current setup with `project.ext.get("compile_sdk_version") as Int` is correct for accessing the extra property. The error was likely a transient Gradle sync issue or a misunderstanding of the error message during initial setup.* 
-
-**Resolution:** Re-syncing Gradle after ensuring all `build.gradle.kts` files correctly reference the `project.ext` properties resolved the issue. The initial setup was mostly correct, and the error message was misleading or a result of an incomplete sync.
 
 ---
 
 ### [Date: 2025-07-21]
 
-**Issue:** Build failed due to `CarValue` and `Redeclaration` errors in `common-data` module.
+**Issue:** Compilation errors in `MainScreen.kt` related to `TabTemplate` and `Screen` lifecycle methods.
 
 **Error Message/Behavior:**
 ```
-e: file:///home/yoel/Development/Android/AACarInfo/common-data/src/main/kotlin/com/example/aacarinfo/common/data/UVDM.kt:3:34 Unresolved reference: CarValue
-e: file:///home/yoel/Development/Android/AACarInfo/common-data/src/main/kotlin/com/example/aacarinfo/common/data/UVDM.kt:5:12 Redeclaration: PowertrainState
-...
+e: file:///home/yoel/Development/Android/AACarInfo/car-app-service/src/main/kotlin/com/example/aacarinfo/car/app/service/screens/MainScreen.kt:30:5 'onCreate' overrides nothing
+e: file:///home/yoel/Development/Android/AACarInfo/car-app-service/src/main/kotlin/com/example/aacarinfo/car/app/service/screens/MainScreen.kt:79:14 Unresolved reference: setPane
+e: file:///home/yoel/Development/Android/AACarInfo/car-app-service/src/main/kotlin/com/example/aacarinfo/car/app/service/screens/MainScreen.kt:89:14 Unresolved reference: setTabs
+e: file:///home/yoel/Development/Android/AACarInfo/car-app-service/src/main/kotlin/com/example/aacarinfo/car/app/service/screens/MainScreen.kt:95:43 Unresolved reference: TabSelectionListener
 ```
 
 **Troubleshooting Steps:**
-1.  Identified that `common-data` was intended to be a pure Kotlin/Java module without Android-specific dependencies like `CarValue`.
-2.  Discovered a redundant `UnifiedVehicleDataModel.kt` file containing duplicate data class definitions.
-3.  Removed `androidx.car.app` dependencies from `common-data/build.gradle.kts`.
-4.  Deleted the `UnifiedVehicleDataModel.kt` file.
-5.  Modified `UVDM.kt` to remove `CarValue` from data class properties, making them use basic Kotlin types.
-6.  Updated `VehicleDataManager.kt` to extract the `.value` from `CarValue` objects before mapping to the UVDM.
+1.  Initially attempted to use `onCreate`, `onActive`, and `onInactive` lifecycle methods directly on `Screen`, which are not direct overrides. Realized `Screen` is a `LifecycleOwner` and `lifecycleScope` should be used within `init` or `onGetTemplate` for observing `StateFlow`s.
+2.  Investigated `TabTemplate` and `Tab` API usage for `androidx.car.app:app:1.3.0-rc01`. Discovered `Tab.Builder` uses `setContainer` instead of `setPane`, and `TabTemplate.Builder.setTabs` requires a `TabSelectionListener` as the first argument.
+3.  Added `@OptIn(ExperimentalCarApi::class)` and explicit import for `TabSelectionListener`, but errors persisted, indicating deeper API incompatibility or instability with `TabTemplate` in the specified version.
+4.  Decided to pivot from `TabTemplate` due to persistent issues and adopted `PaneTemplate` with `ActionStrip` for navigation between Dashboard and Diagnostics views, which is a more stable and commonly used pattern.
+5.  Corrected `PaneTemplate.Builder.setHeaderAction` to accept only an `Action` object, and moved the "Diagnostics" action to `PaneTemplate.Builder.setActionStrip`.
+6.  Re-added missing `Template` import.
 
-**Resolution:** Removing the redundant file and adjusting the `common-data` module to be pure Kotlin, along with correctly extracting values from `CarValue` objects in `VehicleDataManager`, resolved the `Redeclaration` and initial `CarValue` errors.
+**Resolution:** Refactoring `MainScreen.kt` to use `PaneTemplate` for navigation and correctly implementing `ActionStrip` for actions resolved all compilation errors related to UI templates and lifecycle. The project now builds successfully.
 
 ---
 
 ### [Date: 2025-07-21]
 
-**Issue:** Subsequent build failures with `Unresolved reference` and `Type mismatch` errors in `VehicleDataManager.kt` and `VehicleProfiler.kt`.
+**Issue:** `Unresolved reference: isAvailable` and `Unresolved reference: status` in `VehicleDataManager.kt` when checking data availability.
 
 **Error Message/Behavior:**
 ```
-e: file:///home/yoel/Development/Android/AACarInfo/vehicle-data-layer/src/main/kotlin/com/example/aacarinfo/vehicle/data/layer/VehicleDataManager.kt:47:52 Unresolved reference: rangeMeters
-e: file:///home/yoel/Development/Android/AACarInfo/vehicle-data-layer/src/main/kotlin/com/example/aacarinfo/vehicle/data/layer/VehicleDataManager.kt:53:44 Unresolved reference: evPortConnected
-...
-e: file:///home/yoel/Development/Android/AACarInfo/vehicle-data-layer/src/main/kotlin/com/example/aacarinfo/vehicle/data/layer/VehicleProfiler.kt:44:109 Unresolved reference: FUEL_TYPE_DIESEL
+e: file:///home/yoel/Development/Android/AACarInfo/vehicle-data-layer/src/main/kotlin/com/example/aacarinfo/vehicle/data/layer/VehicleDataManager.kt:76:48 Unresolved reference: isAvailable
+e: file:///home/yoel/Development/Android/AACarInfo/vehicle-data-layer/src/main/kotlin/com/example/aacarinfo/vehicle/data/layer/VehicleDataManager.kt:77:50 Unresolved reference: status
 ```
 
 **Troubleshooting Steps:**
-1.  Consulted Android for Cars App Library documentation for `EnergyLevel`, `EvStatus`, `Speed`, `Model`, and `EnergyProfile` classes.
-2.  Identified that properties like `rangeMeters`, `evPortConnected`, `evPortOpen`, `rawSpeedMetersPerSecond`, `make`, `model`, and `year` are direct properties of their respective objects, not nested under `.value` (except for `CarValue` wrappers, where `.value` is indeed needed).
-3.  Corrected `VehicleDataManager.kt` to properly access these properties, including converting `batteryPercent?.value` to `Int?` using `?.toInt()`.
-4.  Corrected `VehicleProfiler.kt` to remove `Companion` from `EnergyProfile.FUEL_TYPE_UNLEADED` and `EnergyProfile.FUEL_TYPE_DIESEL` as they are direct constants.
+1.  Initially attempted to use `isAvailable` directly on data objects (e.g., `energyLevel.isAvailable`), which was incorrect.
+2.  Attempted to use `status` directly on data objects (e.g., `energyLevel.status`), which was also incorrect.
+3.  Realized that `isAvailable` or `status` should be checked on the `CarValue` properties *within* the data objects (e.g., `energyLevel.batteryPercent?.status`).
+4.  Added missing import for `androidx.car.app.hardware.common.CarValue`.
 
-**Resolution:** Correcting the property access patterns and constant references based on the official documentation resolved the remaining compilation errors. The project now builds successfully.
+**Resolution:** Corrected the availability checks in `VehicleDataManager.kt` to access the `status` property of the relevant `CarValue` objects within each data type (e.g., `energyLevel.batteryPercent?.status`). Added the necessary `CarValue` import. The project now builds successfully.

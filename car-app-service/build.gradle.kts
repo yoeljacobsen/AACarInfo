@@ -34,6 +34,8 @@ dependencies {
 
     implementation("androidx.car.app:app:" + rootProject.extra["androidx_car_app_version"])
     implementation("androidx.car.app:app-projected:" + rootProject.extra["androidx_car_app_version"])
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:" + rootProject.extra["kotlin_coroutines_version"])
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
     
 
     testImplementation("junit:junit:4.13.2")

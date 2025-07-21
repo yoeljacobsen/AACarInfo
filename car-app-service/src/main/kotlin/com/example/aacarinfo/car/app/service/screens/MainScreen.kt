@@ -1,182 +1,246 @@
-
 package com.example.aacarinfo.car.app.service.screens
 
+import android.content.pm.PackageManager
 import androidx.car.app.CarContext
 import androidx.car.app.Screen
 import androidx.car.app.model.Action
-import androidx.car.app.model.CarIcon
 import androidx.car.app.model.MessageTemplate
+import androidx.car.app.model.Pane
 import androidx.car.app.model.PaneTemplate
 import androidx.car.app.model.Row
-import androidx.car.app.model.Tab
-import androidx.car.app.model.TabContents
-import androidx.car.app.model.TabTemplate
+import androidx.car.app.model.ActionStrip
 import androidx.car.app.model.Template
-import androidx.core.graphics.drawable.IconCompat
-import android.content.pm.PackageManager
-import com.example.aacarinfo.common.data.ChargingState
-import com.example.aacarinfo.common.data.DrivingDynamics
-import com.example.aacarinfo.common.data.PowertrainState
-import com.example.aacarinfo.common.data.VehicleInfo
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.example.aacarinfo.vehicle.data.layer.VehicleDataManager
 import com.example.aacarinfo.vehicle.data.layer.VehicleProfiler
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.collectLatest
+import com.example.aacarinfo.common.data.ListenerStatus
+import java.text.SimpleDateFormat
+import java.util.Date
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 /**
  * The main screen of the aacarinfo application, displaying vehicle data and diagnostics.
+ * This version uses PaneTemplate for navigation between Dashboard and Diagnostics.
  */
 class MainScreen(carContext: CarContext) : Screen(carContext) {
 
     private val vehicleDataManager = VehicleDataManager(carContext, carContext.mainExecutor)
-    private val screenScope = CoroutineScope(Dispatchers.Main + Job())
-
-    private val powertrainState = MutableStateFlow(PowertrainState(null, null, null))
-    private val vehicleInfo = MutableStateFlow(VehicleInfo(null, null, null, null))
-    private val chargingState = MutableStateFlow(ChargingState(null, null))
-    private val drivingDynamics = MutableStateFlow(DrivingDynamics(null))
-    private val vehicleProfile = MutableStateFlow(VehicleProfiler.VehicleProfile.UNKNOWN)
+    private var userDismissedPermission = false
+    private var showDiagnostics = false // State to toggle between Dashboard and Diagnostics
 
     init {
-        screenScope.launch {
-            vehicleDataManager.powertrainState.collectLatest { powertrainState.value = it }
-        }
-        screenScope.launch {
-            vehicleDataManager.vehicleInfo.collectLatest { vehicleInfo.value = it }
-        }
-        screenScope.launch {
-            vehicleDataManager.chargingState.collectLatest { chargingState.value = it }
-        }
-        screenScope.launch {
-            vehicleDataManager.drivingDynamics.collectLatest { drivingDynamics.value = it }
-        }
-        screenScope.launch {
-            vehicleDataManager.vehicleProfile.collectLatest {
-                vehicleProfile.value = it
-                invalidate()
+        // Observe StateFlows and invalidate the screen when data changes
+        lifecycleScope.launch {
+            lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                launch {
+                    vehicleDataManager.powertrainState.collect {
+                        invalidate()
+                    }
+                }
+                launch {
+                    vehicleDataManager.vehicleInfo.collect {
+                        invalidate()
+                    }
+                }
+                launch {
+                    vehicleDataManager.chargingState.collect {
+                        invalidate()
+                    }
+                }
+                launch {
+                    vehicleDataManager.drivingDynamics.collect {
+                        invalidate()
+                    }
+                }
+                launch {
+                    vehicleDataManager.vehicleProfile.collect {
+                        invalidate()
+                    }
+                }
+                launch {
+                    vehicleDataManager.rawEnergyProfile.collect {
+                        invalidate()
+                    }
+                }
             }
         }
     }
 
     override fun onGetTemplate(): Template {
-        // Check for permissions first
-        if (!hasRequiredPermissions()) {
+        // Check for permissions first, as per SPEC.md Section 4.3
+        if (!checkPermissions() && !userDismissedPermission) {
             return createPermissionsMessageTemplate()
         }
 
-        // Create the Dashboard Tab content
-        val dashboardRows = mutableListOf<Row>()
-
-        vehicleInfo.value.make?.value?.let { make ->
-            dashboardRows.add(Row.Builder().setTitle("Vehicle Make").addText(make).build())
-        }
-        vehicleInfo.value.model?.value?.let { model ->
-            dashboardRows.add(Row.Builder().setTitle("Vehicle Model").addText(model).build())
-        }
-        vehicleInfo.value.year?.value?.let { year ->
-            dashboardRows.add(Row.Builder().setTitle("Vehicle Year").addText(year.toString()).build())
-        }
-        vehicleInfo.value.odometerMeters?.value?.let { odometer ->
-            dashboardRows.add(Row.Builder().setTitle("Odometer").addText("${odometer} meters").build())
-        }
-
-        drivingDynamics.value.speedMetersPerSecond?.value?.let { speed ->
-            dashboardRows.add(Row.Builder().setTitle("Speed").addText("${speed} m/s").build())
-        }
-
-        when (vehicleProfile.value) {
-            VehicleProfiler.VehicleProfile.EV -> {
-                powertrainState.value.stateOfChargePercent?.value?.let { soc ->
-                    dashboardRows.add(Row.Builder().setTitle("Battery Level").addText("${soc}%").build())
-                }
-                powertrainState.value.remainingRangeMeters?.value?.let { range ->
-                    dashboardRows.add(Row.Builder().setTitle("Remaining Range").addText("${range} meters").build())
-                }
-                chargingState.value.isPortConnected?.value?.let { connected ->
-                    dashboardRows.add(Row.Builder().setTitle("EV Port Connected").addText(connected.toString()).build())
-                }
-                chargingState.value.isPortOpen?.value?.let { open ->
-                    dashboardRows.add(Row.Builder().setTitle("EV Port Open").addText(open.toString()).build())
-                }
-            }
-            VehicleProfiler.VehicleProfile.PHEV -> {
-                powertrainState.value.stateOfChargePercent?.value?.let { soc ->
-                    dashboardRows.add(Row.Builder().setTitle("Battery Level").addText("${soc}%").build())
-                }
-                powertrainState.value.fuelLevelPercent?.value?.let { fuel ->
-                    dashboardRows.add(Row.Builder().setTitle("Fuel Level").addText("${fuel}%").build())
-                }
-                powertrainState.value.remainingRangeMeters?.value?.let { range ->
-                    dashboardRows.add(Row.Builder().setTitle("Remaining Range").addText("${range} meters").build())
-                }
-                chargingState.value.isPortConnected?.value?.let { connected ->
-                    dashboardRows.add(Row.Builder().setTitle("EV Port Connected").addText(connected.toString()).build())
-                }
-                chargingState.value.isPortOpen?.value?.let { open ->
-                    dashboardRows.add(Row.Builder().setTitle("EV Port Open").addText(open.toString()).build())
-                }
-            }
-            VehicleProfiler.VehicleProfile.ICE -> {
-                powertrainState.value.fuelLevelPercent?.value?.let { fuel ->
-                    dashboardRows.add(Row.Builder().setTitle("Fuel Level").addText("${fuel}%").build())
-                }
-                powertrainState.value.remainingRangeMeters?.value?.let { range ->
-                    dashboardRows.add(Row.Builder().setTitle("Remaining Range").addText("${range} meters").build())
-                }
-            }
-            else -> {
-                // Handle UNKNOWN or other cases, maybe display a message
-                dashboardRows.add(Row.Builder().setTitle("Vehicle Profile").addText("Unknown or not yet determined").build())
-            }
-        }
-
-        val dashboardPane = PaneTemplate.Builder()
-            .setHeaderAction(Action.BACK)
-            .setTitle("Dashboard")
-            .apply {
-                dashboardRows.forEach { addRow(it) }
-            }
-            .build()
-
-        val dashboardTabContents = TabContents.Builder(dashboardPane).build()
-
-        // Create the Diagnostics Tab content
-        val diagnosticsTabContents = TabContents.Builder(
-            DiagnosticsScreen(carContext, vehicleDataManager)
-        ).build()
-
-        // Build the TabTemplate
-        return TabTemplate.Builder()
-            .setTabs(
-                listOf(
-                    Tab.Builder()
-                        .setTitle("Dashboard")
-                        .setContents(dashboardTabContents)
-                        .build(),
-                    Tab.Builder()
+        return if (showDiagnostics) {
+            PaneTemplate.Builder(createDiagnosticsPane())
+                .setHeaderAction(Action.BACK)
+                .setTitle("Diagnostics")
+                .build()
+        } else {
+            PaneTemplate.Builder(createDashboardPane())
+                .setHeaderAction(Action.APP_ICON)
+                .setTitle("Dashboard")
+                .setActionStrip(ActionStrip.Builder()
+                    .addAction(Action.Builder()
                         .setTitle("Diagnostics")
-                        .setContents(diagnosticsTabContents)
-                        .build()
-                )
+                        .setOnClickListener {
+                            showDiagnostics = true
+                            invalidate()
+                        }
+                        .build())
+                    .build())
+                .build()
+        }
+    }
+
+    /**
+     * Creates the Pane for the "Dashboard" tab, showing vehicle data.
+     */
+    private fun createDashboardPane(): Pane {
+        val paneBuilder = Pane.Builder()
+        // TODO: Extract all hardcoded strings into strings.xml for localization.
+
+        if (!checkPermissions()) {
+            paneBuilder.addRow(
+                Row.Builder()
+                    .setTitle("Permissions Required")
+                    .addText("Grant permissions to see live vehicle data.")
+                    .build()
             )
+        } else {
+            val vehicleInfo = vehicleDataManager.vehicleInfo.value
+            val drivingDynamics = vehicleDataManager.drivingDynamics.value
+            val powertrainState = vehicleDataManager.powertrainState.value
+            val chargingState = vehicleDataManager.chargingState.value
+            val vehicleProfile = vehicleDataManager.vehicleProfile.value
+
+            // Vehicle Info
+            vehicleInfo.make?.let { make ->
+                paneBuilder.addRow(Row.Builder().setTitle("Make").addText(make).build())
+            }
+            vehicleInfo.model?.let { model ->
+                paneBuilder.addRow(Row.Builder().setTitle("Model").addText(model).build())
+            }
+            vehicleInfo.year?.let { year ->
+                paneBuilder.addRow(Row.Builder().setTitle("Year").addText(year.toString()).build())
+            }
+            vehicleInfo.odometerMeters?.let { odo ->
+                paneBuilder.addRow(Row.Builder().setTitle("Odometer").addText("${odo.toInt()} m").build())
+            }
+
+            // Driving Dynamics
+            drivingDynamics.speedMetersPerSecond?.let { speed ->
+                paneBuilder.addRow(Row.Builder().setTitle("Speed").addText("${speed.toInt()} m/s").build())
+            }
+
+            // Powertrain and Charging, displayed based on the inferred vehicle profile
+            when (vehicleProfile) {
+                VehicleProfiler.VehicleProfile.EV, VehicleProfiler.VehicleProfile.PHEV -> {
+                    powertrainState.stateOfChargePercent?.let { soc ->
+                        paneBuilder.addRow(Row.Builder().setTitle("Battery Level").addText("$soc%").build())
+                    }
+                    chargingState.isPortConnected?.let { connected ->
+                        paneBuilder.addRow(Row.Builder().setTitle("EV Port Connected").addText(connected.toString()).build())
+                    }
+                }
+                else -> {} // No battery info for ICE
+            }
+
+            when (vehicleProfile) {
+                VehicleProfiler.VehicleProfile.ICE, VehicleProfiler.VehicleProfile.PHEV -> {
+                    powertrainState.fuelLevelPercent?.let { fuel ->
+                        paneBuilder.addRow(Row.Builder().setTitle("Fuel Level").addText("$fuel%").build())
+                    }
+                }
+                else -> {} // No fuel info for EV
+            }
+
+            powertrainState.remainingRangeMeters?.let { range ->
+                paneBuilder.addRow(Row.Builder().setTitle("Range").addText("${range.toInt()} m").build())
+            }
+        }
+
+        return paneBuilder.build()
+    }
+
+    /**
+     * Creates the Pane for the "Diagnostics" tab, showing technical info.
+     */
+    private fun createDiagnosticsPane(): Pane {
+        val paneBuilder = Pane.Builder()
+        // TODO: Extract all hardcoded strings into strings.xml for localization.
+
+        // As per SPEC.md Section 3.4
+        paneBuilder.addRow(
+            Row.Builder()
+                .setTitle("Platform")
+                .addText("Android Auto (Projected)")
+                .build()
+        )
+        paneBuilder.addRow(
+            Row.Builder()
+                .setTitle("Host Info")
+                .addText(carContext.hostInfo.toString())
+                .build()
+        )
+        paneBuilder.addRow(
+            Row.Builder()
+                .setTitle("Detected Profile")
+                .addText(vehicleDataManager.vehicleProfile.value.name)
+                .build()
+        )
+
+        // Display raw energy profile data
+        val rawProfile = vehicleDataManager.rawEnergyProfile.value
+        if (rawProfile.isNotEmpty()) {
+            paneBuilder.addRow(
+                Row.Builder()
+                    .setTitle("Raw Energy Profile")
+                    .addText(rawProfile)
+                    .build()
+            )
+        } else {
+            paneBuilder.addRow(
+                Row.Builder()
+                    .setTitle("Raw Energy Profile")
+                    .addText("Not available or not yet fetched.")
+                    .build()
+            )
+        }
+
+        // Display listener status with more clarity
+        paneBuilder.addRow(createListenerStatusRow(vehicleDataManager.energyLevelListenerStatus.value))
+        paneBuilder.addRow(createListenerStatusRow(vehicleDataManager.evStatusListenerStatus.value))
+        paneBuilder.addRow(createListenerStatusRow(vehicleDataManager.speedListenerStatus.value))
+        paneBuilder.addRow(createListenerStatusRow(vehicleDataManager.mileageListenerStatus.value))
+        paneBuilder.addRow(createListenerStatusRow(vehicleDataManager.modelFetchStatus.value))
+        paneBuilder.addRow(createListenerStatusRow(vehicleDataManager.energyProfileFetchStatus.value))
+
+        return paneBuilder.build()
+    }
+
+    private fun createListenerStatusRow(status: ListenerStatus): Row {
+        val lastUpdatedText = status.lastUpdated?.let { "Last Updated: ${java.text.SimpleDateFormat("HH:mm:ss").format(java.util.Date(it))}" } ?: "Never Updated"
+        return Row.Builder()
+            .setTitle("${status.name} Listener")
+            .addText("Active: ${status.isActive}, Status: ${status.availability}")
+            .addText(lastUpdatedText)
             .build()
     }
 
-    private fun hasRequiredPermissions(): Boolean {
-        // As per SPEC.md Table 2, check for dangerous permissions.
-        // This is a simplified check. A more robust implementation would check each permission individually.
-        return carContext.checkCarAppPermission("android.car.permission.CAR_ENERGY") == PackageManager.PERMISSION_GRANTED &&
-               carContext.checkCarAppPermission("android.car.permission.CAR_SPEED") == PackageManager.PERMISSION_GRANTED &&
-               carContext.checkCarAppPermission("android.car.permission.CAR_MILEAGE") == PackageManager.PERMISSION_GRANTED &&
-               carContext.checkCarAppPermission("android.car.permission.CAR_ENERGY_PORTS") == PackageManager.PERMISSION_GRANTED
-    }
-
+    /**
+     * Creates the message template to request necessary permissions.
+     */
     private fun createPermissionsMessageTemplate(): Template {
-        return MessageTemplate.Builder("To display vehicle information like battery level and speed, aacarinfo needs access to your car's data. This data is only used on this screen and is never stored or shared. Please grant the permissions on your phone.")
+        return MessageTemplate.Builder(
+            "To display vehicle information like battery level and speed, aacarinfo needs " +
+                    "access to your car's data. This data is only used on this screen and is " +
+                    "never stored or shared. Please grant the permissions on your phone."
+        )
             .setTitle("aacarinfo Needs Permissions")
             .addAction(
                 Action.Builder()
@@ -187,26 +251,42 @@ class MainScreen(carContext: CarContext) : Screen(carContext) {
             .addAction(
                 Action.Builder()
                     .setTitle("Continue Without")
-                    .setOnClickListener { /* Dismiss message, proceed to degraded state */ screenManager.pop() }
+                    .setOnClickListener {
+                        userDismissedPermission = true
+                        invalidate() // Re-render the screen in its degraded state
+                    }
                     .build()
             )
             .build()
     }
 
+    /**
+     * Checks if all required dangerous permissions are granted.
+     */
+    private fun checkPermissions(): Boolean {
+        val requiredPermissions = listOf(
+            "android.permission.CAR_ENERGY",
+            "android.permission.CAR_SPEED",
+            "android.permission.CAR_MILEAGE",
+            "android.permission.CAR_ENERGY_PORTS"
+        )
+        return requiredPermissions.all {
+            carContext.checkSelfPermission(it) == PackageManager.PERMISSION_GRANTED
+        }
+    }
+
+    /**
+     * Initiates the permission request flow.
+     */
     private fun requestPermissions() {
-        // Request permissions as per SPEC.md Section 4.2
-        carContext.requestPermissions(
-            listOf(
-                "android.car.permission.CAR_ENERGY",
-                "android.car.permission.CAR_SPEED",
-                "android.car.permission.CAR_MILEAGE",
-                "android.car.permission.CAR_ENERGY_PORTS"
-            )
-        ) { granted, _ ->
-            // On permission result, invalidate the screen to re-render with updated permissions
-            if (granted.isNotEmpty()) {
-                invalidate()
-            }
+        val permissionsToRequest = listOf(
+            "android.permission.CAR_ENERGY",
+            "android.permission.CAR_SPEED",
+            "android.permission.CAR_MILEAGE",
+            "android.permission.CAR_ENERGY_PORTS"
+        )
+        carContext.requestPermissions(permissionsToRequest) { _, _ ->
+            invalidate() // Re-render with updated permissions
         }
     }
 }

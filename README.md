@@ -47,5 +47,6 @@ This project is organized into a multi-module Gradle build:
 *   Unified Vehicle Data Model (UVDM) data classes implemented in `:common-data`.
 *   `VehicleDataManager` implemented in `:vehicle-data-layer` with data subscriptions for `EnergyLevel`, `EvStatus`, `Speed`, and `Mileage`.
 *   `VehicleProfiler` implemented and integrated into `VehicleDataManager` for inferring vehicle type.
-*   `MainScreen` and `DiagnosticsScreen` implemented in `:car-app-service` with dynamic UI updates based on vehicle data and permission handling.
-*   Resolved various compilation errors related to `CarValue` usage and `EnergyProfile` constants.
+*   `MainScreen` implemented in `:car-app-service` using `PaneTemplate` for navigation between Dashboard and Diagnostics views, with dynamic UI updates based on vehicle data and permission handling.
+*   Detailed listener status tracking and display implemented in `VehicleDataManager` and `MainScreen` Diagnostics tab.
+*   Resolved various compilation errors related to `CarValue` usage, `EnergyProfile` constants, and `TabTemplate` API instability.
