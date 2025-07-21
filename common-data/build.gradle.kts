@@ -29,8 +29,7 @@ android {
 }
 
 dependencies {
-    implementation("androidx.car.app:app:" + rootProject.extra["androidx_car_app_version"])
-    implementation("androidx.car.app:app-projected:" + rootProject.extra["androidx_car_app_version"])
+    
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

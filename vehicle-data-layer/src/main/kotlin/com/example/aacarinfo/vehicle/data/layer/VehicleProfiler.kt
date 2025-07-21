@@ -29,10 +29,10 @@ class VehicleProfiler(
      * Fetches the energy profile and infers the vehicle type.
      * This method should be called upon initialization of the data layer.
      */
-    fun fetchAndInferVehicleProfile(callback: (VehicleProfile) -> Unit) {
+    fun fetchAndInferVehicleProfile(callback: (VehicleProfile, EnergyProfile) -> Unit) {
         carInfo.fetchEnergyProfile(executor) { energyProfile ->
             currentVehicleProfile = inferVehicleProfile(energyProfile)
-            callback(currentVehicleProfile)
+            callback(currentVehicleProfile, energyProfile)
         }
     }
 
@@ -41,7 +41,7 @@ class VehicleProfiler(
         val evConnectorTypes = energyProfile.evConnectorTypes.value ?: emptyList()
 
         val hasElectricFuel = fuelTypes.any { it == EnergyProfile.FUEL_TYPE_ELECTRIC }
-        val hasGasolineFuel = fuelTypes.any { it == EnergyProfile.Companion.FUEL_TYPE_UNLEADED || it == EnergyProfile.Companion.FUEL_TYPE_DIESEL }
+        val hasGasolineFuel = fuelTypes.any { it == EnergyProfile.FUEL_TYPE_UNLEADED || it == EnergyProfile.FUEL_TYPE_DIESEL }
         val hasEvConnectors = evConnectorTypes.isNotEmpty()
 
         return when {

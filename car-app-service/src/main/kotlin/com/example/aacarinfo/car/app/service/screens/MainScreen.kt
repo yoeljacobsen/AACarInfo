@@ -14,13 +14,17 @@ import androidx.car.app.model.TabTemplate
 import androidx.car.app.model.Template
 import androidx.core.graphics.drawable.IconCompat
 import android.content.pm.PackageManager
-import com.example.aacarinfo.vehicle.data.layer.UnifiedVehicleDataModel
+import com.example.aacarinfo.common.data.ChargingState
+import com.example.aacarinfo.common.data.DrivingDynamics
+import com.example.aacarinfo.common.data.PowertrainState
+import com.example.aacarinfo.common.data.VehicleInfo
 import com.example.aacarinfo.vehicle.data.layer.VehicleDataManager
 import com.example.aacarinfo.vehicle.data.layer.VehicleProfiler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 /**
@@ -28,21 +32,34 @@ import kotlinx.coroutines.launch
  */
 class MainScreen(carContext: CarContext) : Screen(carContext) {
 
-    private val vehicleDataManager = VehicleDataManager(carContext)
+    private val vehicleDataManager = VehicleDataManager(carContext, carContext.mainExecutor)
     private val screenScope = CoroutineScope(Dispatchers.Main + Job())
 
-    private var currentUVDM: UnifiedVehicleDataModel = UnifiedVehicleDataModel()
-    private var currentVehicleProfile: VehicleProfiler.VehicleProfile = VehicleProfiler.VehicleProfile.UNKNOWN
+    private val powertrainState = MutableStateFlow(PowertrainState(null, null, null))
+    private val vehicleInfo = MutableStateFlow(VehicleInfo(null, null, null, null))
+    private val chargingState = MutableStateFlow(ChargingState(null, null))
+    private val drivingDynamics = MutableStateFlow(DrivingDynamics(null))
+    private val vehicleProfile = MutableStateFlow(VehicleProfiler.VehicleProfile.UNKNOWN)
 
     init {
         screenScope.launch {
-            vehicleDataManager.uvdm.collect { uvdm ->
-                currentUVDM = uvdm
+            vehicleDataManager.powertrainState.collectLatest { powertrainState.value = it }
+        }
+        screenScope.launch {
+            vehicleDataManager.vehicleInfo.collectLatest { vehicleInfo.value = it }
+        }
+        screenScope.launch {
+            vehicleDataManager.chargingState.collectLatest { chargingState.value = it }
+        }
+        screenScope.launch {
+            vehicleDataManager.drivingDynamics.collectLatest { drivingDynamics.value = it }
+        }
+        screenScope.launch {
+            vehicleDataManager.vehicleProfile.collectLatest {
+                vehicleProfile.value = it
                 invalidate()
             }
         }
-        // Fetch initial vehicle profile
-        currentVehicleProfile = vehicleDataManager.getCurrentVehicleProfile()
     }
 
     override fun onGetTemplate(): Template {
@@ -52,20 +69,84 @@ class MainScreen(carContext: CarContext) : Screen(carContext) {
         }
 
         // Create the Dashboard Tab content
-        val dashboardTabContents = TabContents.Builder(
-            PaneTemplate.Builder()
-                .setHeaderAction(Action.BACK)
-                .setTitle("Dashboard")
-                .addRow(Row.Builder().setTitle("Vehicle Make").addText(currentUVDM.vehicleInfo.make?.value ?: "N/A").build())
-                .addRow(Row.Builder().setTitle("Vehicle Model").addText(currentUVDM.vehicleInfo.model?.value ?: "N/A").build())
-                .addRow(Row.Builder().setTitle("Odometer").addText("${currentUVDM.vehicleInfo.odometerMeters?.value ?: "N/A"} meters").build())
-                .addRow(Row.Builder().setTitle("Speed").addText("${currentUVDM.drivingDynamics.speedMetersPerSecond?.value ?: "N/A"} m/s").build())
-                .build()
-        ).build()
+        val dashboardRows = mutableListOf<Row>()
+
+        vehicleInfo.value.make?.value?.let { make ->
+            dashboardRows.add(Row.Builder().setTitle("Vehicle Make").addText(make).build())
+        }
+        vehicleInfo.value.model?.value?.let { model ->
+            dashboardRows.add(Row.Builder().setTitle("Vehicle Model").addText(model).build())
+        }
+        vehicleInfo.value.year?.value?.let { year ->
+            dashboardRows.add(Row.Builder().setTitle("Vehicle Year").addText(year.toString()).build())
+        }
+        vehicleInfo.value.odometerMeters?.value?.let { odometer ->
+            dashboardRows.add(Row.Builder().setTitle("Odometer").addText("${odometer} meters").build())
+        }
+
+        drivingDynamics.value.speedMetersPerSecond?.value?.let { speed ->
+            dashboardRows.add(Row.Builder().setTitle("Speed").addText("${speed} m/s").build())
+        }
+
+        when (vehicleProfile.value) {
+            VehicleProfiler.VehicleProfile.EV -> {
+                powertrainState.value.stateOfChargePercent?.value?.let { soc ->
+                    dashboardRows.add(Row.Builder().setTitle("Battery Level").addText("${soc}%").build())
+                }
+                powertrainState.value.remainingRangeMeters?.value?.let { range ->
+                    dashboardRows.add(Row.Builder().setTitle("Remaining Range").addText("${range} meters").build())
+                }
+                chargingState.value.isPortConnected?.value?.let { connected ->
+                    dashboardRows.add(Row.Builder().setTitle("EV Port Connected").addText(connected.toString()).build())
+                }
+                chargingState.value.isPortOpen?.value?.let { open ->
+                    dashboardRows.add(Row.Builder().setTitle("EV Port Open").addText(open.toString()).build())
+                }
+            }
+            VehicleProfiler.VehicleProfile.PHEV -> {
+                powertrainState.value.stateOfChargePercent?.value?.let { soc ->
+                    dashboardRows.add(Row.Builder().setTitle("Battery Level").addText("${soc}%").build())
+                }
+                powertrainState.value.fuelLevelPercent?.value?.let { fuel ->
+                    dashboardRows.add(Row.Builder().setTitle("Fuel Level").addText("${fuel}%").build())
+                }
+                powertrainState.value.remainingRangeMeters?.value?.let { range ->
+                    dashboardRows.add(Row.Builder().setTitle("Remaining Range").addText("${range} meters").build())
+                }
+                chargingState.value.isPortConnected?.value?.let { connected ->
+                    dashboardRows.add(Row.Builder().setTitle("EV Port Connected").addText(connected.toString()).build())
+                }
+                chargingState.value.isPortOpen?.value?.let { open ->
+                    dashboardRows.add(Row.Builder().setTitle("EV Port Open").addText(open.toString()).build())
+                }
+            }
+            VehicleProfiler.VehicleProfile.ICE -> {
+                powertrainState.value.fuelLevelPercent?.value?.let { fuel ->
+                    dashboardRows.add(Row.Builder().setTitle("Fuel Level").addText("${fuel}%").build())
+                }
+                powertrainState.value.remainingRangeMeters?.value?.let { range ->
+                    dashboardRows.add(Row.Builder().setTitle("Remaining Range").addText("${range} meters").build())
+                }
+            }
+            else -> {
+                // Handle UNKNOWN or other cases, maybe display a message
+                dashboardRows.add(Row.Builder().setTitle("Vehicle Profile").addText("Unknown or not yet determined").build())
+            }
+        }
+
+        val dashboardPane = PaneTemplate.Builder()
+            .setHeaderAction(Action.BACK)
+            .setTitle("Dashboard")
+            .apply {
+                dashboardRows.forEach { addRow(it) }
+            }
+            .build()
+
+        val dashboardTabContents = TabContents.Builder(dashboardPane).build()
 
         // Create the Diagnostics Tab content
         val diagnosticsTabContents = TabContents.Builder(
-            DiagnosticsScreen(carContext, vehicleDataManager).onGetTemplate() as PaneTemplate // Cast is safe here
+            DiagnosticsScreen(carContext, vehicleDataManager)
         ).build()
 
         // Build the TabTemplate

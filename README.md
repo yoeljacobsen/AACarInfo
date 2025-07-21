@@ -44,3 +44,8 @@ This project is organized into a multi-module Gradle build:
 *   Initial multi-module Gradle project structure set up.
 *   `settings.gradle.kts` and root `build.gradle.kts` configured.
 *   Module-specific `build.gradle.kts` files created for `:app`, `:car-app-service`, `:vehicle-data-layer`, and `:common-data`.
+*   Unified Vehicle Data Model (UVDM) data classes implemented in `:common-data`.
+*   `VehicleDataManager` implemented in `:vehicle-data-layer` with data subscriptions for `EnergyLevel`, `EvStatus`, `Speed`, and `Mileage`.
+*   `VehicleProfiler` implemented and integrated into `VehicleDataManager` for inferring vehicle type.
+*   `MainScreen` and `DiagnosticsScreen` implemented in `:car-app-service` with dynamic UI updates based on vehicle data and permission handling.
+*   Resolved various compilation errors related to `CarValue` usage and `EnergyProfile` constants.
