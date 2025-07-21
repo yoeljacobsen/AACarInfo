@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "com.example.aacarinfo"
-    compileSdk = rootProject.extra["compile_sdk_version"] as Int
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.aacarinfo"
         minSdk = rootProject.extra["min_sdk_version"] as Int
-        targetSdk = rootProject.extra["target_sdk_version"] as Int
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 

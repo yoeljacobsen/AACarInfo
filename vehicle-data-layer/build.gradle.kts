@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.example.aacarinfo.vehicle.data.layer"
-    compileSdk = rootProject.extra["compile_sdk_version"] as Int
+    compileSdk = 35
 
     defaultConfig {
         minSdk = rootProject.extra["min_sdk_version"] as Int

@@ -47,6 +47,21 @@ This project is organized into a multi-module Gradle build:
 *   Unified Vehicle Data Model (UVDM) data classes implemented in `:common-data`.
 *   `VehicleDataManager` implemented in `:vehicle-data-layer` with data subscriptions for `EnergyLevel`, `EvStatus`, `Speed`, and `Mileage`.
 *   `VehicleProfiler` implemented and integrated into `VehicleDataManager` for inferring vehicle type.
-*   `MainScreen` implemented in `:car-app-service` using `PaneTemplate` for navigation between Dashboard and Diagnostics views, with dynamic UI updates based on vehicle data and permission handling.
+*   `MainScreen` implemented in `:car-app-service` using `PaneTemplate` for navigation between Dashboard and Diagnostics views, with dynamic UI updates based on vehicle data and granular permission handling.
 *   Detailed listener status tracking and display implemented in `VehicleDataManager` and `MainScreen` Diagnostics tab.
-*   Resolved various compilation errors related to `CarValue` usage, `EnergyProfile` constants, and `TabTemplate` API instability.
+*   `AacarinfoCarAppService.createHostValidator()` implemented (currently set to `ALLOW_ALL_HOSTS_VALIDATOR` for development simplicity).
+*   Launcher `MainActivity` added to the `:app` module, making the app visible and launchable from the phone's app drawer.
+*   Android Auto category updated to `androidx.car.app.category.NAVIGATION` and `allowedTemplates` meta-data configured with fully qualified template names in `AndroidManifest.xml`.
+*   `compileSdk` and `targetSdk` aligned to API 35 across all modules.
+*   **Current Status:** The app now appears in the phone's app drawer (displays a blank page). It is still not appearing in the Android Auto DHU.
+
+## Future Enhancements
+
+*   Implement more comprehensive error handling and user feedback for data unavailability.
+*   Add more vehicle data points as supported by future Android for Cars App Library updates.
+*   Refine UI/UX based on user testing and feedback.
+*   Implement secure settings storage using `EncryptedSharedPreferences`.
+*   Re-evaluate and implement robust unit and integration tests, addressing previous unresolvable issues.
+*   Display vehicle information on the phone's `MainActivity`.
+
+---

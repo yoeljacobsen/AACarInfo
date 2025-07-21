@@ -1,0 +1,6 @@
+<resources>
+    <string-array name="allowed_templates">
+        <item>androidx.car.app.model.PaneTemplate</item>
+        <item>androidx.car.app.model.MessageTemplate</item>
+    </string-array>
+</resources>

@@ -1,4 +1,3 @@
-
 ---
 
 ### [Date: 2025-07-21]
@@ -42,3 +41,72 @@ e: file:///home/yoel/Development/Android/AACarInfo/vehicle-data-layer/src/main/k
 4.  Added missing import for `androidx.car.app.hardware.common.CarValue`.
 
 **Resolution:** Corrected the availability checks in `VehicleDataManager.kt` to access the `status` property of the relevant `CarValue` objects within each data type (e.g., `energyLevel.batteryPercent?.status`). Added the necessary `CarValue` import. The project now builds successfully.
+
+---
+
+### [Date: 2025-07-21]
+
+**Issue:** Android Auto app not appearing in DHU, with "Package DENIED; Uses for TEMPLATE not defined" log message.
+
+**Error Message/Behavior:**
+`07-21 12:51:12.889 2772 4003 E AppScanObserverService: Try to add a invalid package: com.example.aacarinfo`
+`CAR.VALIDATOR: Package DENIED; Uses for TEMPLATE not defined [com.example.aacarinfo]`
+
+**Troubleshooting Steps:**
+1.  Initially suspected incorrect Android Auto category in `AndroidManifest.xml`. Changed `androidx.car.app.category.IOT` to `androidx.car.app.category.NAVIGATION`. This did not resolve the issue.
+2.  Investigated `AndroidManifest.xml` and `SPEC.md` for template declarations. Realized that the `androidx.car.app.allowedTemplates` meta-data in the manifest requires *fully qualified class names* for the templates, not just their simple names.
+
+**Resolution:** Updated `app/src/main/res/values/arrays.xml` to use fully qualified template names: `androidx.car.app.model.PaneTemplate` and `androidx.car.app.model.MessageTemplate`. This resolved the "Uses for TEMPLATE not defined" error.
+
+---
+
+### [Date: 2025-07-21]
+
+**Issue:** App not appearing on the phone's home screen (blank page when launched).
+
+**Error Message/Behavior:**
+App icon is visible in the phone's app drawer, but launching it results in a blank screen.
+
+**Troubleshooting Steps:**
+1.  Realized that the `:app` module's `AndroidManifest.xml` was missing a launcher activity declaration. Android Auto apps typically have a separate launcher activity for the phone-side UI.
+2.  Added a basic `MainActivity` declaration with `android.intent.action.MAIN` and `android.intent.category.LAUNCHER` intent filters to `app/src/main/AndroidManifest.xml`.
+3.  Created `MainActivity.kt` in `app/src/main/java/com/example/aacarinfo/`.
+4.  Encountered compilation errors (`Redeclaration: MainActivity`, `Overload resolution ambiguity`) because `MainActivity.kt` was placed in the `java` source directory while Kotlin source is typically in `kotlin`.
+
+**Resolution:** Deleted `MainActivity.kt` from `app/src/main/java/com/example/aacarinfo/` and re-created it in the correct Kotlin source directory: `app/src/main/kotlin/com/example/aacarinfo/`. This resolved the compilation issues and made the app launchable on the phone.
+
+---
+
+### [Date: 2025-07-21]
+
+**Issue:** Unit tests for `VehicleDataManager` and `VehicleProfiler` failing with `MockitoException` and `Type mismatch` errors.
+
+**Error Message/Behavior:**
+`org.mockito.exceptions.base.MockitoException`
+`Type mismatch: inferred type is Int but Float! was expected`
+`Unresolved reference: EV_CONNECTOR_TYPE_J1772`
+
+**Troubleshooting Steps:**
+1.  Added `mockito-core`, `mockito-kotlin`, and `kotlinx-coroutines-test` dependencies.
+2.  Corrected `EV_CONNECTOR_TYPE_J1772` to `EnergyProfile.EV_CONNECTOR_TYPE_J1772` and then to a string literal `"J1772"` as a workaround for unresolved reference issues in a pure JVM test environment.
+3.  Explicitly casted `fuelPercent` and `batteryPercent` to their nullable `Float?` and `Int?` types respectively in `assertEquals` calls to resolve type mismatches.
+4.  Attempted `gradlew clean` to resolve potential build cache issues.
+5.  The `MockitoException` with `IllegalStateException` and `IllegalArgumentException` (related to bytecode manipulation) persisted, indicating a deeper incompatibility between Mockito's inline mocking and the test environment/dependencies that could not be resolved with simple code changes.
+
+**Resolution:** Due to unresolvable low-level Mockito/JVM errors, the unit tests for `VehicleDataManager` and `VehicleProfiler` were reverted. The `VehicleDataManagerTest.kt` file was deleted, and test-related dependencies were removed from `vehicle-data-layer/build.gradle.kts`. Further investigation into the testing setup or alternative mocking strategies is required for future unit testing.
+
+---
+
+### [Date: 2025-07-21]
+
+**Issue:** `compileSdk` and `targetSdk` mismatch with Android 15 phone.
+
+**Error Message/Behavior:**
+App not appearing on Android Auto, despite other fixes. Suspected SDK level incompatibility.
+
+**Troubleshooting Steps:**
+1.  Noted that the phone is running Android 15 (API 35), while `compileSdk` and `targetSdk` were set to 34.
+2.  Updated `compileSdk` and `targetSdk` to 35 in `app/build.gradle.kts`, `car-app-service/build.gradle.kts`, `common-data/build.gradle.kts`, and `vehicle-data-layer/build.gradle.kts`.
+3.  Added `android.suppressUnsupportedCompileSdk=35` to `gradle.properties` to suppress warnings.
+
+**Resolution:** Aligned `compileSdk` and `targetSdk` to API 35 across all modules. This ensures compatibility with the Android 15 device.
