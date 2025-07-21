@@ -8,6 +8,13 @@
         android:minSdkVersion="29"
         android:targetSdkVersion="35" />
 
+    <!-- Required permissions for vehicle data access -->
+    <uses-permission android:name="android.car.permission.CAR_ENERGY" />
+    <uses-permission android:name="android.car.permission.CAR_SPEED" />
+    <uses-permission android:name="android.car.permission.CAR_MILEAGE" />
+    <uses-permission android:name="android.car.permission.CAR_ENERGY_PORTS" />
+    <uses-permission android:name="android.car.permission.CAR_INFO" />
+
     <queries>
         <provider
             android:name="androidx.car.app.connection.provider"

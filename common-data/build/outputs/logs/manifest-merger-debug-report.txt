@@ -1,16 +1,16 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/yoel/Development/Android/AACarInfo/common-data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7202342665345396240.xml:2:13-83
-INJECTED from /home/yoel/Development/Android/AACarInfo/common-data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7202342665345396240.xml:2:13-83
+ADDED from /home/yoel/Development/Android/AACarInfo/common-data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4094771370775962598.xml:2:13-83
+INJECTED from /home/yoel/Development/Android/AACarInfo/common-data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4094771370775962598.xml:2:13-83
 	package
-		INJECTED from /home/yoel/Development/Android/AACarInfo/common-data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7202342665345396240.xml
+		INJECTED from /home/yoel/Development/Android/AACarInfo/common-data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4094771370775962598.xml
 	xmlns:android
-		ADDED from /home/yoel/Development/Android/AACarInfo/common-data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7202342665345396240.xml:2:23-81
+		ADDED from /home/yoel/Development/Android/AACarInfo/common-data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4094771370775962598.xml:2:23-81
 uses-sdk
-INJECTED from /home/yoel/Development/Android/AACarInfo/common-data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7202342665345396240.xml reason: use-sdk injection requested
-INJECTED from /home/yoel/Development/Android/AACarInfo/common-data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7202342665345396240.xml
-INJECTED from /home/yoel/Development/Android/AACarInfo/common-data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7202342665345396240.xml
+INJECTED from /home/yoel/Development/Android/AACarInfo/common-data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4094771370775962598.xml reason: use-sdk injection requested
+INJECTED from /home/yoel/Development/Android/AACarInfo/common-data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4094771370775962598.xml
+INJECTED from /home/yoel/Development/Android/AACarInfo/common-data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4094771370775962598.xml
 	android:targetSdkVersion
-		INJECTED from /home/yoel/Development/Android/AACarInfo/common-data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7202342665345396240.xml
+		INJECTED from /home/yoel/Development/Android/AACarInfo/common-data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4094771370775962598.xml
 	android:minSdkVersion
-		INJECTED from /home/yoel/Development/Android/AACarInfo/common-data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7202342665345396240.xml
+		INJECTED from /home/yoel/Development/Android/AACarInfo/common-data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4094771370775962598.xml

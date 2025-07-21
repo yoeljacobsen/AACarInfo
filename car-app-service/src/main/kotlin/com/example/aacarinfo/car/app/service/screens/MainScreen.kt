@@ -104,47 +104,47 @@ class MainScreen(carContext: CarContext) : Screen(carContext) {
         val paneBuilder = Pane.Builder()
         // TODO: Extract all hardcoded strings into strings.xml for localization.
 
-        if (!checkPermissions()) {
-            paneBuilder.addRow(
-                Row.Builder()
-                    .setTitle("Permissions Required")
-                    .addText("Grant permissions to see live vehicle data.")
-                    .build()
-            )
-        } else {
-            val vehicleInfo = vehicleDataManager.vehicleInfo.value
-            val drivingDynamics = vehicleDataManager.drivingDynamics.value
-            val powertrainState = vehicleDataManager.powertrainState.value
-            val chargingState = vehicleDataManager.chargingState.value
-            val vehicleProfile = vehicleDataManager.vehicleProfile.value
+        val vehicleInfo = vehicleDataManager.vehicleInfo.value
+        val drivingDynamics = vehicleDataManager.drivingDynamics.value
+        val powertrainState = vehicleDataManager.powertrainState.value
+        val chargingState = vehicleDataManager.chargingState.value
+        val vehicleProfile = vehicleDataManager.vehicleProfile.value
 
-            // Vehicle Info
-            vehicleInfo.make?.let { make ->
-                paneBuilder.addRow(Row.Builder().setTitle("Make").addText(make).build())
-            }
-            vehicleInfo.model?.let { model ->
-                paneBuilder.addRow(Row.Builder().setTitle("Model").addText(model).build())
-            }
-            vehicleInfo.year?.let { year ->
-                paneBuilder.addRow(Row.Builder().setTitle("Year").addText(year.toString()).build())
-            }
+        // Vehicle Info (CAR_INFO is a normal permission, assumed granted)
+        vehicleInfo.make?.let { make ->
+            paneBuilder.addRow(Row.Builder().setTitle("Make").addText(make).build())
+        }
+        vehicleInfo.model?.let { model ->
+            paneBuilder.addRow(Row.Builder().setTitle("Model").addText(model).build())
+        }
+        vehicleInfo.year?.let { year ->
+            paneBuilder.addRow(Row.Builder().setTitle("Year").addText(year.toString()).build())
+        }
+
+        // Odometer (CAR_MILEAGE permission)
+        if (carContext.checkSelfPermission("android.car.permission.CAR_MILEAGE") == PackageManager.PERMISSION_GRANTED) {
             vehicleInfo.odometerMeters?.let { odo ->
                 paneBuilder.addRow(Row.Builder().setTitle("Odometer").addText("${odo.toInt()} m").build())
             }
+        } else {
+            paneBuilder.addRow(Row.Builder().setTitle("Odometer").addText("Permission Denied: CAR_MILEAGE").build())
+        }
 
-            // Driving Dynamics
+        // Speed (CAR_SPEED permission)
+        if (carContext.checkSelfPermission("android.car.permission.CAR_SPEED") == PackageManager.PERMISSION_GRANTED) {
             drivingDynamics.speedMetersPerSecond?.let { speed ->
                 paneBuilder.addRow(Row.Builder().setTitle("Speed").addText("${speed.toInt()} m/s").build())
             }
+        } else {
+            paneBuilder.addRow(Row.Builder().setTitle("Speed").addText("Permission Denied: CAR_SPEED").build())
+        }
 
-            // Powertrain and Charging, displayed based on the inferred vehicle profile
+        // Powertrain and Charging, displayed based on the inferred vehicle profile and CAR_ENERGY permission
+        if (carContext.checkSelfPermission("android.car.permission.CAR_ENERGY") == PackageManager.PERMISSION_GRANTED) {
             when (vehicleProfile) {
                 VehicleProfiler.VehicleProfile.EV, VehicleProfiler.VehicleProfile.PHEV -> {
                     powertrainState.stateOfChargePercent?.let { soc ->
                         paneBuilder.addRow(Row.Builder().setTitle("Battery Level").addText("$soc%").build())
-                    }
-                    chargingState.isPortConnected?.let { connected ->
-                        paneBuilder.addRow(Row.Builder().setTitle("EV Port Connected").addText(connected.toString()).build())
                     }
                 }
                 else -> {} // No battery info for ICE
@@ -162,6 +162,17 @@ class MainScreen(carContext: CarContext) : Screen(carContext) {
             powertrainState.remainingRangeMeters?.let { range ->
                 paneBuilder.addRow(Row.Builder().setTitle("Range").addText("${range.toInt()} m").build())
             }
+        } else {
+            paneBuilder.addRow(Row.Builder().setTitle("Powertrain Data").addText("Permission Denied: CAR_ENERGY").build())
+        }
+
+        // EV Port Connected (CAR_ENERGY_PORTS permission)
+        if (carContext.checkSelfPermission("android.car.permission.CAR_ENERGY_PORTS") == PackageManager.PERMISSION_GRANTED) {
+            chargingState.isPortConnected?.let { connected ->
+                paneBuilder.addRow(Row.Builder().setTitle("EV Port Connected").addText(connected.toString()).build())
+            }
+        } else {
+            paneBuilder.addRow(Row.Builder().setTitle("EV Port Status").addText("Permission Denied: CAR_ENERGY_PORTS").build())
         }
 
         return paneBuilder.build()

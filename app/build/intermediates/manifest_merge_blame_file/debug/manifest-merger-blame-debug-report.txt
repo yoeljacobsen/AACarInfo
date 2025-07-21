@@ -8,186 +8,203 @@
 8        android:minSdkVersion="29"
 9        android:targetSdkVersion="35" />
 10
-11    <queries>
-11-->[androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:23:5-28:15
-12        <provider
-12-->[androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:24:9-27:43
-13            android:name="androidx.car.app.connection.provider"
-13-->[androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:25:13-64
-14            android:authorities="androidx.car.app.connection" />
-14-->[androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:26:13-62
-15    </queries>
-16
-17    <permission
-17-->[androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
-18        android:name="com.example.aacarinfo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-18-->[androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
-19        android:protectionLevel="signature" />
-19-->[androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
-20
-21    <uses-permission android:name="com.example.aacarinfo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-21-->[androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
-21-->[androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
-22
-23    <application
-23-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:5:5-28:19
-24        android:allowBackup="true"
-24-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:6:9-35
-25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-25-->[androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
-26        android:dataExtractionRules="@xml/data_extraction_rules"
-26-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:7:9-65
-27        android:debuggable="true"
-28        android:extractNativeLibs="false"
-29        android:fullBackupContent="@xml/backup_rules"
-29-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:8:9-54
-30        android:icon="@mipmap/ic_launcher"
-30-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:9:9-43
-31        android:label="@string/app_name"
-31-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:10:9-41
-32        android:roundIcon="@mipmap/ic_launcher_round"
-32-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:11:9-54
-33        android:supportsRtl="true"
-33-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:12:9-35
-34        android:theme="@style/Theme.AACarInfo" >
-34-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:13:9-47
-35        <service
-35-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:16:9-26:19
-36            android:name="com.example.aacarinfo.car.app.service.AacarinfoCarAppService"
-36-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:17:13-88
-37            android:exported="true" >
-37-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:18:13-36
-38            <intent-filter>
-38-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:19:13-22:29
-39                <action android:name="androidx.car.app.CarAppService" />
-39-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:20:17-73
-39-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:20:25-70
-40
-41                <category android:name="androidx.car.app.category.IOT" />
-41-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:21:17-74
-41-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:21:27-71
-42            </intent-filter>
-43
-44            <meta-data
-44-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:23:13-25:37
-45                android:name="androidx.car.app.minApiVersion"
-45-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:24:17-62
-46                android:value="3" />
-46-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:25:17-34
-47        </service>
-48
-49        <activity
-49-->[androidx.compose.ui:ui-test-manifest:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/d91e37e6c645c4e600d5a68da279da41/transformed/ui-test-manifest-1.4.0/AndroidManifest.xml:23:9-25:39
-50            android:name="androidx.activity.ComponentActivity"
-50-->[androidx.compose.ui:ui-test-manifest:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/d91e37e6c645c4e600d5a68da279da41/transformed/ui-test-manifest-1.4.0/AndroidManifest.xml:24:13-63
-51            android:exported="true" />
-51-->[androidx.compose.ui:ui-test-manifest:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/d91e37e6c645c4e600d5a68da279da41/transformed/ui-test-manifest-1.4.0/AndroidManifest.xml:25:13-36
-52        <activity
-52-->[androidx.compose.ui:ui-tooling:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/960415cfbd525d7014374b5a186fffdf/transformed/ui-tooling-1.4.0/AndroidManifest.xml:23:9-25:39
-53            android:name="androidx.compose.ui.tooling.PreviewActivity"
-53-->[androidx.compose.ui:ui-tooling:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/960415cfbd525d7014374b5a186fffdf/transformed/ui-tooling-1.4.0/AndroidManifest.xml:24:13-71
-54            android:exported="true" />
-54-->[androidx.compose.ui:ui-tooling:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/960415cfbd525d7014374b5a186fffdf/transformed/ui-tooling-1.4.0/AndroidManifest.xml:25:13-36
+11    <!-- Required permissions for vehicle data access -->
+12    <uses-permission android:name="android.car.permission.CAR_ENERGY" />
+12-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:6:5-73
+12-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:6:22-70
+13    <uses-permission android:name="android.car.permission.CAR_SPEED" />
+13-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:7:5-72
+13-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:7:22-69
+14    <uses-permission android:name="android.car.permission.CAR_MILEAGE" />
+14-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:8:5-74
+14-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:8:22-71
+15    <uses-permission android:name="android.car.permission.CAR_ENERGY_PORTS" />
+15-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:9:5-79
+15-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:9:22-76
+16    <uses-permission android:name="android.car.permission.CAR_INFO" />
+16-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:10:5-71
+16-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:10:22-68
+17
+18    <queries>
+18-->[androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:23:5-28:15
+19        <provider
+19-->[androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:24:9-27:43
+20            android:name="androidx.car.app.connection.provider"
+20-->[androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:25:13-64
+21            android:authorities="androidx.car.app.connection" />
+21-->[androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:26:13-62
+22    </queries>
+23
+24    <permission
+24-->[androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+25        android:name="com.example.aacarinfo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+25-->[androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+26        android:protectionLevel="signature" />
+26-->[androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+27
+28    <uses-permission android:name="com.example.aacarinfo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+28-->[androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+28-->[androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+29
+30    <application
+30-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:12:5-35:19
+31        android:allowBackup="true"
+31-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:13:9-35
+32        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+32-->[androidx.core:core:1.9.0] /home/yoel/.gradle/caches/8.14.2/transforms/a9acb269334a4545aae0400b6bef0cdf/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+33        android:dataExtractionRules="@xml/data_extraction_rules"
+33-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:14:9-65
+34        android:debuggable="true"
+35        android:extractNativeLibs="false"
+36        android:fullBackupContent="@xml/backup_rules"
+36-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:15:9-54
+37        android:icon="@mipmap/ic_launcher"
+37-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:16:9-43
+38        android:label="@string/app_name"
+38-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:17:9-41
+39        android:roundIcon="@mipmap/ic_launcher_round"
+39-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:18:9-54
+40        android:supportsRtl="true"
+40-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:19:9-35
+41        android:theme="@style/Theme.AACarInfo" >
+41-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:20:9-47
+42        <service
+42-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:23:9-33:19
+43            android:name="com.example.aacarinfo.car.app.service.AacarinfoCarAppService"
+43-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:24:13-88
+44            android:exported="true" >
+44-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:25:13-36
+45            <intent-filter>
+45-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:26:13-29:29
+46                <action android:name="androidx.car.app.CarAppService" />
+46-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:27:17-73
+46-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:27:25-70
+47
+48                <category android:name="androidx.car.app.category.IOT" />
+48-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:28:17-74
+48-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:28:27-71
+49            </intent-filter>
+50
+51            <meta-data
+51-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:30:13-32:37
+52                android:name="androidx.car.app.minApiVersion"
+52-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:31:17-62
+53                android:value="3" />
+53-->/home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:32:17-34
+54        </service>
 55
-56        <service
-56-->[androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:24:9-34:19
-57            android:name="androidx.car.app.CarAppMetadataHolderService"
-57-->[androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:25:13-72
-58            android:enabled="false"
-58-->[androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:26:13-36
-59            android:exported="false"
-59-->[androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:27:13-37
-60            android:process="" >
-60-->[androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:28:13-31
-61            <meta-data
-61-->[androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:31:13-33:89
-62                android:name="androidx.car.app.CarAppMetadataHolderService.CAR_HARDWARE_MANAGER"
-62-->[androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:32:17-97
-63                android:value="androidx.car.app.hardware.ProjectedCarHardwareManager" />
-63-->[androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:33:17-86
-64        </service>
-65
-66        <activity
-66-->[androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:31:9-34:75
-67            android:name="androidx.car.app.CarAppPermissionActivity"
-67-->[androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:32:13-69
-68            android:exported="false"
-68-->[androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:33:13-37
-69            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-69-->[androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:34:13-72
-70
-71        <receiver
-71-->[androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:36:9-38:40
-72            android:name="androidx.car.app.notification.CarAppNotificationBroadcastReceiver"
-72-->[androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:37:13-93
-73            android:exported="false" />
-73-->[androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:38:13-37
-74
-75        <provider
-75-->[androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
-76            android:name="androidx.startup.InitializationProvider"
-76-->[androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
-77            android:authorities="com.example.aacarinfo.androidx-startup"
-77-->[androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
-78            android:exported="false" >
-78-->[androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
-79            <meta-data
-79-->[androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
-80                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-80-->[androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
-81                android:value="androidx.startup" />
-81-->[androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
-82            <meta-data
-82-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/0249a807199915eafdb5dceec6c5e3af/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
-83                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-83-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/0249a807199915eafdb5dceec6c5e3af/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
-84                android:value="androidx.startup" />
-84-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/0249a807199915eafdb5dceec6c5e3af/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
-85            <meta-data
-85-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
-86                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-86-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
-87                android:value="androidx.startup" />
-87-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
-88        </provider>
-89
-90        <receiver
-90-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
-91            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-91-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
-92            android:directBootAware="false"
-92-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
-93            android:enabled="true"
-93-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
-94            android:exported="true"
-94-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
-95            android:permission="android.permission.DUMP" >
-95-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
-96            <intent-filter>
-96-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
-97                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-97-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
-97-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
-98            </intent-filter>
-99            <intent-filter>
-99-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
-100                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-100-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
-100-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
-101            </intent-filter>
-102            <intent-filter>
-102-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
-103                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-103-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
-103-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
-104            </intent-filter>
-105            <intent-filter>
-105-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
-106                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-106-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
-106-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
-107            </intent-filter>
-108        </receiver>
-109    </application>
-110
-111</manifest>
+56        <activity
+56-->[androidx.compose.ui:ui-test-manifest:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/d91e37e6c645c4e600d5a68da279da41/transformed/ui-test-manifest-1.4.0/AndroidManifest.xml:23:9-25:39
+57            android:name="androidx.activity.ComponentActivity"
+57-->[androidx.compose.ui:ui-test-manifest:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/d91e37e6c645c4e600d5a68da279da41/transformed/ui-test-manifest-1.4.0/AndroidManifest.xml:24:13-63
+58            android:exported="true" />
+58-->[androidx.compose.ui:ui-test-manifest:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/d91e37e6c645c4e600d5a68da279da41/transformed/ui-test-manifest-1.4.0/AndroidManifest.xml:25:13-36
+59        <activity
+59-->[androidx.compose.ui:ui-tooling:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/960415cfbd525d7014374b5a186fffdf/transformed/ui-tooling-1.4.0/AndroidManifest.xml:23:9-25:39
+60            android:name="androidx.compose.ui.tooling.PreviewActivity"
+60-->[androidx.compose.ui:ui-tooling:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/960415cfbd525d7014374b5a186fffdf/transformed/ui-tooling-1.4.0/AndroidManifest.xml:24:13-71
+61            android:exported="true" />
+61-->[androidx.compose.ui:ui-tooling:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/960415cfbd525d7014374b5a186fffdf/transformed/ui-tooling-1.4.0/AndroidManifest.xml:25:13-36
+62
+63        <service
+63-->[androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:24:9-34:19
+64            android:name="androidx.car.app.CarAppMetadataHolderService"
+64-->[androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:25:13-72
+65            android:enabled="false"
+65-->[androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:26:13-36
+66            android:exported="false"
+66-->[androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:27:13-37
+67            android:process="" >
+67-->[androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:28:13-31
+68            <meta-data
+68-->[androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:31:13-33:89
+69                android:name="androidx.car.app.CarAppMetadataHolderService.CAR_HARDWARE_MANAGER"
+69-->[androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:32:17-97
+70                android:value="androidx.car.app.hardware.ProjectedCarHardwareManager" />
+70-->[androidx.car.app:app-projected:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/b707df89df239c0f3ef75e067c21871d/transformed/app-projected-1.3.0-rc01/AndroidManifest.xml:33:17-86
+71        </service>
+72
+73        <activity
+73-->[androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:31:9-34:75
+74            android:name="androidx.car.app.CarAppPermissionActivity"
+74-->[androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:32:13-69
+75            android:exported="false"
+75-->[androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:33:13-37
+76            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+76-->[androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:34:13-72
+77
+78        <receiver
+78-->[androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:36:9-38:40
+79            android:name="androidx.car.app.notification.CarAppNotificationBroadcastReceiver"
+79-->[androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:37:13-93
+80            android:exported="false" />
+80-->[androidx.car.app:app:1.3.0-rc01] /home/yoel/.gradle/caches/8.14.2/transforms/0a2a988650fa9a95d20e609a6e962333/transformed/app-1.3.0-rc01/AndroidManifest.xml:38:13-37
+81
+82        <provider
+82-->[androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+83            android:name="androidx.startup.InitializationProvider"
+83-->[androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+84            android:authorities="com.example.aacarinfo.androidx-startup"
+84-->[androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+85            android:exported="false" >
+85-->[androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+86            <meta-data
+86-->[androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+87                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+87-->[androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+88                android:value="androidx.startup" />
+88-->[androidx.emoji2:emoji2:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/bb52dccda57ed9a0f0d89b73a3dc6fcc/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+89            <meta-data
+89-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/0249a807199915eafdb5dceec6c5e3af/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
+90                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+90-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/0249a807199915eafdb5dceec6c5e3af/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
+91                android:value="androidx.startup" />
+91-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/yoel/.gradle/caches/8.14.2/transforms/0249a807199915eafdb5dceec6c5e3af/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
+92            <meta-data
+92-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+93                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+93-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+94                android:value="androidx.startup" />
+94-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+95        </provider>
+96
+97        <receiver
+97-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+98            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+98-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+99            android:directBootAware="false"
+99-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+100            android:enabled="true"
+100-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+101            android:exported="true"
+101-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+102            android:permission="android.permission.DUMP" >
+102-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+103            <intent-filter>
+103-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+104                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+104-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+104-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+105            </intent-filter>
+106            <intent-filter>
+106-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+107                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+107-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+107-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+108            </intent-filter>
+109            <intent-filter>
+109-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+110                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+110-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+110-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+111            </intent-filter>
+112            <intent-filter>
+112-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+113                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+113-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+113-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/yoel/.gradle/caches/8.14.2/transforms/b8920305d9688a1963afc9100c27e65f/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+114            </intent-filter>
+115        </receiver>
+116    </application>
+117
+118</manifest>

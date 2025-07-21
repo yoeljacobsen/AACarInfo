@@ -1,26 +1,22 @@
 [
     {
-        "merged": "/home/yoel/.gradle/daemon/8.14.2/com.example.aacarinfo.app-merged_res-46:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "/home/yoel/.gradle/daemon/8.14.2/com.example.aacarinfo.app-main-48:/mipmap-anydpi-v26/ic_launcher.xml"
-    },
-    {
-        "merged": "/home/yoel/.gradle/daemon/8.14.2/com.example.aacarinfo.app-merged_res-46:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "/home/yoel/.gradle/daemon/8.14.2/com.example.aacarinfo.app-main-48:/drawable/ic_launcher_foreground.xml"
+        "merged": "com.example.aacarinfo.app-merged_res-46:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.aacarinfo.app-main-48:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
         "merged": "com.example.aacarinfo.app-merged_res-46:/mipmap-anydpi-v26_ic_launcher_foreground.xml.flat",
         "source": "com.example.aacarinfo.app-main-48:/mipmap-anydpi-v26/ic_launcher_foreground.xml"
     },
     {
-        "merged": "/home/yoel/.gradle/daemon/8.14.2/com.example.aacarinfo.app-merged_res-46:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "/home/yoel/.gradle/daemon/8.14.2/com.example.aacarinfo.app-main-48:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.example.aacarinfo.app-merged_res-46:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.aacarinfo.app-main-48:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "/home/yoel/.gradle/daemon/8.14.2/com.example.aacarinfo.app-merged_res-46:/xml_backup_rules.xml.flat",
-        "source": "/home/yoel/.gradle/daemon/8.14.2/com.example.aacarinfo.app-main-48:/xml/backup_rules.xml"
+        "merged": "com.example.aacarinfo.app-merged_res-46:/xml_backup_rules.xml.flat",
+        "source": "com.example.aacarinfo.app-main-48:/xml/backup_rules.xml"
     },
     {
-        "merged": "/home/yoel/.gradle/daemon/8.14.2/com.example.aacarinfo.app-merged_res-46:/xml_data_extraction_rules.xml.flat",
-        "source": "/home/yoel/.gradle/daemon/8.14.2/com.example.aacarinfo.app-main-48:/xml/data_extraction_rules.xml"
+        "merged": "com.example.aacarinfo.app-merged_res-46:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.aacarinfo.app-main-48:/xml/data_extraction_rules.xml"
     }
 ]
