@@ -12,7 +12,7 @@ Development must strictly adhere to the project specifications outlined in the `
 
 ## 2. Documentation and Session Continuity
 
-To ensure seamless project continuity between development sessions, you must maintain detailed and up-to-date documentation:
+To ensure seamless project continuity between development sessions, you must frequently maintain detailed and up-to-date documentation:
 
 * **`README.md`**: Keep this file updated with a summary of the project, setup instructions, overall progress, and any changes to the project structure.
 * **`DEBUGGING.md`**: Log all encountered bugs, unexpected behavior, error messages, and the steps taken to troubleshoot them. This is crucial for tracking issues and avoiding repetitive debugging efforts.
