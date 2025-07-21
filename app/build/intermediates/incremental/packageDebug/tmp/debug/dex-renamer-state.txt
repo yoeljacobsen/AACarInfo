@@ -1,4 +1,4 @@
-#Mon Jul 21 12:35:13 IDT 2025
+#Mon Jul 21 14:41:57 IDT 2025
 base.0=/home/yoel/Development/Android/AACarInfo/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/home/yoel/Development/Android/AACarInfo/app/build/intermediates/dex/debug/mergeLibDexDebug/13/classes.dex
 base.2=/home/yoel/Development/Android/AACarInfo/app/build/intermediates/dex/debug/mergeLibDexDebug/14/classes.dex

@@ -1,4 +1,5 @@
 com.example.aacarinfo
+array allowed_templates
 array hosts_allowlist_sample
 attr alpha
 attr carColorPrimary

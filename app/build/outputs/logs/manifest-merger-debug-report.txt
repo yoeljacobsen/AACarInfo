@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:2:1-37:12
-INJECTED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:2:1-37:12
-INJECTED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:2:1-37:12
-INJECTED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:2:1-37:12
+ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:2:1-52:12
+INJECTED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:2:1-52:12
+INJECTED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:2:1-52:12
+INJECTED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:2:1-52:12
 MERGED from [:car-app-service] /home/yoel/Development/Android/AACarInfo/car-app-service/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:vehicle-data-layer] /home/yoel/Development/Android/AACarInfo/vehicle-data-layer/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:common-data] /home/yoel/Development/Android/AACarInfo/common-data/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
@@ -83,8 +83,8 @@ ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest
 	android:name
 		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:10:22-68
 application
-ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:12:5-35:19
-INJECTED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:12:5-35:19
+ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:12:5-50:19
+INJECTED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:12:5-50:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/d91e37e6c645c4e600d5a68da279da41/transformed/ui-test-manifest-1.4.0/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/d91e37e6c645c4e600d5a68da279da41/transformed/ui-test-manifest-1.4.0/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-tooling:1.4.0] /home/yoel/.gradle/caches/8.14.2/transforms/960415cfbd525d7014374b5a186fffdf/transformed/ui-tooling-1.4.0/AndroidManifest.xml:22:5-26:19
@@ -127,28 +127,54 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /home/yoel/.gradle/caches/8
 		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:20:9-47
 	android:dataExtractionRules
 		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:14:9-65
-service#com.example.aacarinfo.car.app.service.AacarinfoCarAppService
-ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:23:9-33:19
+activity#com.example.aacarinfo.MainActivity
+ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:23:9-32:20
+	android:label
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:26:13-45
 	android:exported
 		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:25:13-36
+	android:theme
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:27:13-51
 	android:name
-		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:24:13-88
-intent-filter#action:name:androidx.car.app.CarAppService+category:name:androidx.car.app.category.IOT
-ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:26:13-29:29
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:24:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:28:13-31:29
+action#android.intent.action.MAIN
+ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:29:17-69
+	android:name
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:29:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:30:17-77
+	android:name
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:30:27-74
+service#com.example.aacarinfo.car.app.service.AacarinfoCarAppService
+ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:34:9-44:19
+	android:exported
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:36:13-36
+	android:name
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:35:13-88
+intent-filter#action:name:androidx.car.app.CarAppService+category:name:androidx.car.app.category.NAVIGATION
+ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:37:13-40:29
 action#androidx.car.app.CarAppService
-ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:27:17-73
+ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:38:17-73
 	android:name
-		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:27:25-70
-category#androidx.car.app.category.IOT
-ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:28:17-74
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:38:25-70
+category#androidx.car.app.category.NAVIGATION
+ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:39:17-81
 	android:name
-		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:28:27-71
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:39:27-78
 meta-data#androidx.car.app.minApiVersion
-ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:30:13-32:37
+ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:41:13-43:37
 	android:value
-		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:32:17-34
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:43:17-34
 	android:name
-		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:31:17-62
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:42:17-62
+meta-data#androidx.car.app.allowedTemplates
+ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:46:9-48:59
+	android:resource
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:48:13-56
+	android:name
+		ADDED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml:47:13-61
 uses-sdk
 INJECTED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/yoel/Development/Android/AACarInfo/app/src/main/AndroidManifest.xml

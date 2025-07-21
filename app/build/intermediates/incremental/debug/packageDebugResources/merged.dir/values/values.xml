@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="allowed_templates">
+        <item>androidx.car.app.model.PaneTemplate</item>
+        <item>androidx.car.app.model.MessageTemplate</item>
+    </string-array>
     <color name="black">#FF000000</color>
     <color name="ic_launcher_background">#FFFFFF</color>
     <color name="purple_200">#FFBB86FC</color>

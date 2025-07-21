@@ -1,4 +1,5 @@
-int array hosts_allowlist_sample 0x7f010000
+int array allowed_templates 0x7f010000
+int array hosts_allowlist_sample 0x7f010001
 int attr alpha 0x7f020000
 int attr carColorPrimary 0x7f020001
 int attr carColorPrimaryDark 0x7f020002

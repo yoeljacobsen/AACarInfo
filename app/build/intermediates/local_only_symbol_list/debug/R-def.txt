@@ -1,5 +1,6 @@
 R_DEF: Internal format may change without notice
 local
+array allowed_templates
 color black
 color ic_launcher_background
 color purple_200
