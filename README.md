@@ -24,7 +24,13 @@ AACarInfo is an Android Auto application designed to provide real-time vehicle d
 4.  **Build the Project:**
     *   From the Android Studio menu, select `Build > Make Project`.
 
-5.  **Run on Desktop Head Unit (DHU):**
+5.  **Enable Android Auto Developer Settings (on your phone):**
+    *   Open the Android Auto app on your phone.
+    *   Tap the "Version and permission info" header 10 times to enable developer mode.
+    *   Tap the three-dot menu in the top right corner and select "Developer settings".
+    *   Scroll down and enable "Unknown sources".
+
+6.  **Run on Desktop Head Unit (DHU):**
     *   Ensure you have the Android Auto Desktop Head Unit (DHU) installed. You can find instructions [here](https://developer.android.com/training/cars/testing/dhu).
     *   Connect your phone to the development machine and enable USB debugging.
     *   Run the `app` module on your connected phone.
@@ -53,7 +59,7 @@ This project is organized into a multi-module Gradle build:
 *   Launcher `MainActivity` added to the `:app` module, making the app visible and launchable from the phone's app drawer.
 *   Android Auto category updated to `androidx.car.app.category.NAVIGATION` and `allowedTemplates` meta-data configured with fully qualified template names in `AndroidManifest.xml`.
 *   `compileSdk` and `targetSdk` aligned to API 35 across all modules.
-*   **Current Status:** The app now appears in the phone's app drawer (displays a blank page). It is still not appearing in the Android Auto DHU.
+*   **Current Status:** The app appears in the phone's app drawer (displays a blank page). On the DHU, it is still not listed.
 
 ## Future Enhancements
 

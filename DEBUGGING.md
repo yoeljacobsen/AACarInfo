@@ -97,6 +97,27 @@ App icon is visible in the phone's app drawer, but launching it results in a bla
 
 ---
 
+### [Date: 2025-07-22]
+
+**Issue:** App not listed on DHU.
+
+**Error Message/Behavior:**
+App is not listed in the Android Auto DHU.
+
+**Troubleshooting History:**
+*   **Initial State:** App was listed on DHU but crashed with "MinAPI level not declared in Manifest".
+*   **Attempt 1 (minApiVersion location):** Moved `minApiVersion` from `<application>` to `<service>` tag. This caused the app to no longer be listed on the DHU.
+*   **Attempt 2 (minApiVersion value):** Changed `minApiVersion` to a literal integer (`7`) instead of a resource reference. This did not resolve the app not being listed.
+*   **Attempt 3 (allowedTemplates format):** Changed `allowedTemplates` from `@array/allowed_templates` to a comma-separated string of fully qualified class names. This did not resolve the app not being listed.
+*   **Attempt 4 (Simplified Manifest):** Removed all non-essential permissions and meta-data from `AndroidManifest.xml` to isolate the issue. This did not resolve the app not being listed.
+*   **Attempt 5 (Re-added com.google.android.gms.car.application):** Re-added the `com.google.android.gms.car.application` meta-data tag, which is crucial for app discovery. This resolved the issue of the app not being listed on the DHU.
+
+**Current Status:** The app is now listed on the DHU. The previous crash ("MinAPI level not declared in Manifest") is expected to re-occur, as we have reverted to a state where the app is discovered but crashes.
+
+**Resolution:** (Pending)
+
+---
+
 ### [Date: 2025-07-21]
 
 **Issue:** `compileSdk` and `targetSdk` mismatch with Android 15 phone.

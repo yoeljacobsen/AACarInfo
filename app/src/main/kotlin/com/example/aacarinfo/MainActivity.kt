@@ -1,3 +1,4 @@
+
 package com.example.aacarinfo
 
 import android.os.Bundle
@@ -12,35 +13,25 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.aacarinfo.ui.theme.AACarInfoTheme
 
+import androidx.compose.ui.graphics.Color
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.ui.Alignment
+import androidx.compose.foundation.layout.Arrangement
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AACarInfoTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
+            Surface(color = Color.Red, modifier = Modifier.fillMaxSize()) {
+                Column(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Greeting("Android")
+                    Text(text = "Hello from MainActivity!", color = Color.Black)
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    AACarInfoTheme {
-        Greeting("Android")
     }
 }

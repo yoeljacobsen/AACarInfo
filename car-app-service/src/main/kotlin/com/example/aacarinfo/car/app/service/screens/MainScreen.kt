@@ -70,31 +70,14 @@ class MainScreen(carContext: CarContext) : Screen(carContext) {
     }
 
     override fun onGetTemplate(): Template {
-        // Check for permissions first, as per SPEC.md Section 4.3
-        if (!checkPermissions() && !userDismissedPermission) {
-            return createPermissionsMessageTemplate()
-        }
-
-        return if (showDiagnostics) {
-            PaneTemplate.Builder(createDiagnosticsPane())
-                .setHeaderAction(Action.BACK)
-                .setTitle("Diagnostics")
+        return PaneTemplate.Builder(
+            Pane.Builder()
+                .addRow(Row.Builder().setTitle("Hello from Android Auto!").build())
                 .build()
-        } else {
-            PaneTemplate.Builder(createDashboardPane())
-                .setHeaderAction(Action.APP_ICON)
-                .setTitle("Dashboard")
-                .setActionStrip(ActionStrip.Builder()
-                    .addAction(Action.Builder()
-                        .setTitle("Diagnostics")
-                        .setOnClickListener {
-                            showDiagnostics = true
-                            invalidate()
-                        }
-                        .build())
-                    .build())
-                .build()
-        }
+        )
+            .setHeaderAction(Action.APP_ICON)
+            .setTitle("AACarInfo")
+            .build()
     }
 
     /**
@@ -102,6 +85,7 @@ class MainScreen(carContext: CarContext) : Screen(carContext) {
      */
     private fun createDashboardPane(): Pane {
         val paneBuilder = Pane.Builder()
+        var dataAvailable = false
         // TODO: Extract all hardcoded strings into strings.xml for localization.
 
         val vehicleInfo = vehicleDataManager.vehicleInfo.value
@@ -113,18 +97,22 @@ class MainScreen(carContext: CarContext) : Screen(carContext) {
         // Vehicle Info (CAR_INFO is a normal permission, assumed granted)
         vehicleInfo.make?.let { make ->
             paneBuilder.addRow(Row.Builder().setTitle("Make").addText(make).build())
+            dataAvailable = true
         }
         vehicleInfo.model?.let { model ->
             paneBuilder.addRow(Row.Builder().setTitle("Model").addText(model).build())
+            dataAvailable = true
         }
         vehicleInfo.year?.let { year ->
             paneBuilder.addRow(Row.Builder().setTitle("Year").addText(year.toString()).build())
+            dataAvailable = true
         }
 
         // Odometer (CAR_MILEAGE permission)
         if (carContext.checkSelfPermission("android.car.permission.CAR_MILEAGE") == PackageManager.PERMISSION_GRANTED) {
             vehicleInfo.odometerMeters?.let { odo ->
                 paneBuilder.addRow(Row.Builder().setTitle("Odometer").addText("${odo.toInt()} m").build())
+                dataAvailable = true
             }
         } else {
             paneBuilder.addRow(Row.Builder().setTitle("Odometer").addText("Permission Denied: CAR_MILEAGE").build())
@@ -134,6 +122,7 @@ class MainScreen(carContext: CarContext) : Screen(carContext) {
         if (carContext.checkSelfPermission("android.car.permission.CAR_SPEED") == PackageManager.PERMISSION_GRANTED) {
             drivingDynamics.speedMetersPerSecond?.let { speed ->
                 paneBuilder.addRow(Row.Builder().setTitle("Speed").addText("${speed.toInt()} m/s").build())
+                dataAvailable = true
             }
         } else {
             paneBuilder.addRow(Row.Builder().setTitle("Speed").addText("Permission Denied: CAR_SPEED").build())
@@ -145,6 +134,7 @@ class MainScreen(carContext: CarContext) : Screen(carContext) {
                 VehicleProfiler.VehicleProfile.EV, VehicleProfiler.VehicleProfile.PHEV -> {
                     powertrainState.stateOfChargePercent?.let { soc ->
                         paneBuilder.addRow(Row.Builder().setTitle("Battery Level").addText("$soc%").build())
+                        dataAvailable = true
                     }
                 }
                 else -> {} // No battery info for ICE
@@ -154,6 +144,7 @@ class MainScreen(carContext: CarContext) : Screen(carContext) {
                 VehicleProfiler.VehicleProfile.ICE, VehicleProfiler.VehicleProfile.PHEV -> {
                     powertrainState.fuelLevelPercent?.let { fuel ->
                         paneBuilder.addRow(Row.Builder().setTitle("Fuel Level").addText("$fuel%").build())
+                        dataAvailable = true
                     }
                 }
                 else -> {} // No fuel info for EV
@@ -161,6 +152,7 @@ class MainScreen(carContext: CarContext) : Screen(carContext) {
 
             powertrainState.remainingRangeMeters?.let { range ->
                 paneBuilder.addRow(Row.Builder().setTitle("Range").addText("${range.toInt()} m").build())
+                dataAvailable = true
             }
         } else {
             paneBuilder.addRow(Row.Builder().setTitle("Powertrain Data").addText("Permission Denied: CAR_ENERGY").build())
@@ -170,9 +162,14 @@ class MainScreen(carContext: CarContext) : Screen(carContext) {
         if (carContext.checkSelfPermission("android.car.permission.CAR_ENERGY_PORTS") == PackageManager.PERMISSION_GRANTED) {
             chargingState.isPortConnected?.let { connected ->
                 paneBuilder.addRow(Row.Builder().setTitle("EV Port Connected").addText(connected.toString()).build())
+                dataAvailable = true
             }
         } else {
             paneBuilder.addRow(Row.Builder().setTitle("EV Port Status").addText("Permission Denied: CAR_ENERGY_PORTS").build())
+        }
+
+        if (!dataAvailable) {
+            paneBuilder.addRow(Row.Builder().setTitle("Waiting for vehicle data...").build())
         }
 
         return paneBuilder.build()

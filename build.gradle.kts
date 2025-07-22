@@ -9,5 +9,5 @@ plugins {
 val min_sdk_version by extra(29)
 val compile_sdk_version by extra(35)
 val target_sdk_version by extra(35)
-val androidx_car_app_version by extra("1.3.0-rc01")
+val androidx_car_app_version by extra("1.7.0")
 val kotlin_coroutines_version by extra("1.7.3")

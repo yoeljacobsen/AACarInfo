@@ -22,3 +22,9 @@ To ensure seamless project continuity between development sessions, you must fre
 ## 3. API and Platform Constraints
 
 The application must be developed exclusively using the **Android Auto API**. Do not use or implement any features from the **Android Automotive OS**. The project's goal is to create an application that runs on a user's phone and projects to a compatible vehicle's head unit via Android Auto.
+
+---
+
+## 4. Build and Execution
+
+When running Gradle build tasks, use the `--quiet` flag to filter the output and only display errors. This helps to reduce noise and save tokens. For example: `./gradlew build --quiet`.
