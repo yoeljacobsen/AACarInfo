@@ -59,7 +59,7 @@ This project is organized into a multi-module Gradle build:
 *   Launcher `MainActivity` added to the `:app` module, making the app visible and launchable from the phone's app drawer.
 *   Android Auto category updated to `androidx.car.app.category.NAVIGATION` and `allowedTemplates` meta-data configured with fully qualified template names in `AndroidManifest.xml`.
 *   `compileSdk` and `targetSdk` aligned to API 35 across all modules.
-*   **Current Status:** The app appears in the phone's app drawer (displays a blank page). On the DHU, it is still not listed.
+*   **Current Status:** The app now compiles successfully. The Android Auto category has been updated to `NAVIGATION`, which should make it appear in the DHU. Visual verification is currently blocked by a `sudo` password issue with the DHU script.
 
 ## Future Enhancements
 
