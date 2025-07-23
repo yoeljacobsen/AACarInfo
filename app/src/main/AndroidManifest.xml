@@ -36,7 +36,7 @@
             android:permission="android.car.permission.TEMPLATE_RENDERER">
             <intent-filter>
                 <action android:name="androidx.car.app.CarAppService" />
-                <category android:name="androidx.car.app.category.NAVIGATION" />
+                <category android:name="androidx.car.app.category.IOT" />
             </intent-filter>
             <meta-data
                 android:name="androidx.car.app.minApiVersion"
@@ -44,9 +44,12 @@
         </service>
 
         <meta-data
+            android:name="androidx.car.app.auto_app_desc"
+            android:resource="@xml/automotive_app_desc" />
+
+        <meta-data
             android:name="androidx.car.app.allowedTemplates"
             android:resource="@array/allowed_templates" />
-
     </application>
 
 </manifest>
