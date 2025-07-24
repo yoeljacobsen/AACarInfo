@@ -70,13 +70,32 @@ class MainScreen(carContext: CarContext) : Screen(carContext) {
     }
 
     override fun onGetTemplate(): Template {
-        return PaneTemplate.Builder(
-            Pane.Builder()
-                .addRow(Row.Builder().setTitle("Hello from Android Auto!").build())
-                .build()
-        )
+        if (!checkPermissions() && !userDismissedPermission) {
+            return createPermissionsMessageTemplate()
+        }
+
+        val paneBuilder = if (showDiagnostics) {
+            createDiagnosticsPane()
+        } else {
+            createDashboardPane()
+        }
+
+        return PaneTemplate.Builder(paneBuilder)
             .setHeaderAction(Action.APP_ICON)
             .setTitle("AACarInfo")
+            .setActionStrip(
+                ActionStrip.Builder()
+                    .addAction(
+                        Action.Builder()
+                            .setTitle(if (showDiagnostics) "Dashboard" else "Diagnostics")
+                            .setOnClickListener {
+                                showDiagnostics = !showDiagnostics
+                                invalidate()
+                            }
+                            .build()
+                    )
+                    .build()
+            )
             .build()
     }
 

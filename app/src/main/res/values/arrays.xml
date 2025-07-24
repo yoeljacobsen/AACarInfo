@@ -2,5 +2,6 @@
     <string-array name="allowed_templates">
         <item>androidx.car.app.model.PaneTemplate</item>
         <item>androidx.car.app.model.MessageTemplate</item>
+        <item>androidx.car.app.model.NavigationTemplate</item>
     </string-array>
 </resources>
